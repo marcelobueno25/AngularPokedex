@@ -1,0 +1,27 @@
+<!-- <h1>Detalhe do Pokemon</h1>
+
+<a (click)="getParametro()">Ver Detalhe</a>
+
+<a routerLink="['pokemon']">Voltar</a>
+
+<p>{{ detalhePokemon.id }}</p>
+<p>{{ detalhePokemon.name }}</p>
+
+<img src="{{ detalhePokemon.sprites.front_default || '' }}" alt="pokemon" />
+ -->
+
+<mat-grid-list cols="4" rowHeight="1:1" gutterSize="10px" role="list">
+
+  <mat-grid-tile colspan="4" role="listitem">
+    <mat-grid-tile-header>
+      <p>#{{ detalhePokemon.id }}</p>
+      <p>-{{ detalhePokemon.name }}</p>
+    </mat-grid-tile-header>
+    <img src="{{ detalhePokemon.sprites.front_default || '' }}" alt="pokemon" />
+    <mat-grid-tile-footer>
+      <button mat-raised-button aria-label="Botão que volta para lista pokemon" routerLink="['pokemon']">Voltar</button>
+    </mat-grid-tile-footer>
+  </mat-grid-tile>
+  <mat-grid-tile colspan="2" role="listitem">3</mat-grid-tile>
+  <mat-grid-tile colspan="2" role="listitem">4</mat-grid-tile>
+</mat-grid-list>

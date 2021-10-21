@@ -1,0 +1,185 @@
+
+
+:host {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.card {
+  min-width: 250px;
+  padding: 0;
+  border-radius: 10px;
+
+  .card_header {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+
+    .card_header_avatar img {
+      width: 100%;
+    }
+
+    .card_header_title, .card_header_subtitle {
+      margin: 0;
+      text-transform: capitalize;
+    }
+  }
+  .mat-card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+    .card_image {
+      width: 150px;
+      margin: 0;
+    }
+  }
+
+  .card_footer {
+    width: 100%;
+    margin: 0;
+
+    .card_link_visualizar {
+      display: block;
+      padding: 5px 0;
+      border-radius: 0 0 10px 10px;
+      width: 100%;
+    }
+  }
+}
+
+// .card {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   min-width: 250px;
+//   max-height: 300px;
+//   border-radius: 10px;
+//   background: linear-gradient(180deg, #ED5564, #fff);
+
+//   p {
+//     margin: 0;
+//     padding: 0;
+//   }
+
+//   header {
+//     display: flex;
+//     flex-wrap: wrap;
+//     padding: 10px;
+//     background: #333;
+//     border-radius: 10px 10px 0 0;
+
+//     .card_header_icon {
+//       display: inline-block;
+//       height: 20px;
+//       margin-right: 10px;
+//     }
+
+//     .card_numero, .card_numero span {
+//       font-weight: bold;
+//       font-size: 18px;
+//       color: #fff;
+//     }
+
+//     .card_name {
+//       font-family: cursive;
+//       text-transform: uppercase;
+//       text-align: center;
+//       font-weight: 600;
+//       font-size: 15px;
+//       flex: 1;
+//       flex-basis: 100%;
+//       color: #fff;
+//     }
+//   }
+
+//   .card_content {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 10px 0;
+
+//     img {
+//       display: block;
+//       height: 100px;
+//     }
+//   }
+
+//   footer {
+//     width: 100%;
+
+//     .card_link_visualizar {
+//       display: block;
+//       list-style: none;
+//       text-decoration: none;
+//       color: #fff;
+//       background-color: #333;
+//       font-weight: bold;
+//       font-size: 13px;
+//       text-align: center;
+//       padding: 5px 0;
+//       border-radius: 0 0 10px 10px;
+//       transition: 0.5s;
+//       border: 1px solid #333;
+//       width: 100%;
+//       cursor: pointer;
+
+//       &:hover {
+//         color: #333;
+//         background-color: transparent;
+//       }
+//     }
+//   }
+// }
+
+
+.card-color {
+  &.color-white {
+    // background: linear-gradient(180deg, #fff, #c7c7c7);
+    background-image: url(../../../../../assets/backgroundColor/white2.jpg);
+    background-size: cover;
+  }
+  &.color-brown {
+    // background: linear-gradient(180deg, #ED5564, #fff);
+    background-image: url(../../../../../assets/backgroundColor/brown3.jpg);
+    background-size: cover;
+    background-position: 50%;
+  }
+  &.color-red {
+    // background: linear-gradient(180deg, #ED5564, #fff);
+    background-image: url(../../../../../assets/backgroundColor/red2.jpg);
+    background-size: cover;
+    background-position: 50%;
+  }
+  &.color-purple {
+    // background: linear-gradient(180deg, purple, #fff);
+    background-image: url(../../../../../assets/backgroundColor/purple2.jpg);
+    background-size: cover;
+  }
+  &.color-blue {
+    // background: linear-gradient(180deg, rgb(0, 183, 255), #fff);
+    background-image: url(../../../../../assets/backgroundColor/blue2.jpg);
+    background-size: cover;
+  }
+  &.color-green {
+    // background: linear-gradient(180deg, #046437, #fff);
+    background-image: url(../../../../../assets/backgroundColor/green2.jpg);
+    background-size: cover;
+  }
+  &.color-yellow {
+    // background: linear-gradient(180deg, #046437, #fff);
+    background-image: url(../../../../../assets/backgroundColor/yellow2.jpg);
+    background-size: cover;
+    background-position: 50%;
+  }
+  &.color-pink {
+    // background: linear-gradient(180deg, #046437, #fff);
+    background-image: url(../../../../../assets/backgroundColor/pink2.jpg);
+    background-size: cover;
+  }
+  &.color-gray {
+    background-image: url(../../../../../assets/backgroundColor/gray2.jpg);
+    background-size: cover;
+  }
+}
