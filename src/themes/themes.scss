@@ -4,32 +4,37 @@
 @import './theme-dark.scss';
 @import './theme-light.scss';
 
+$background: map_get($mat-blue-grey, 900);
 
-@mixin style-theme($theme) {
-$primary: map-get($theme, primary);
-$accent: map-get($theme, accent);
+ @include angular-material-theme($light-theme);
 
-  .mat-card-title, .mat-card-subtitle, .mat-raised-button {
-    color: mat-color($accent);
-  }
-  .mat-card-header {
-    background: mat-color($primary);
-  }
-  .mat-raised-button {
-    background-color: mat-color($primary);
-  }
-  .mat-grid-tile, .mat-grid-tile-header, .mat-grid-tile-footer {
-    border: 1px solid red;
-    box-sizing: border-box;
-  }
-}
-
-.theme-black {
-  background: #222;
-  @include style-theme($light-theme);
+.dark-theme-mode {
+  background: $background;
+  @include angular-material-theme($black-theme);
 }
 
 
-.theme-light {
-  @include style-theme($black-theme);
-}
+
+
+
+// @mixin style-theme($theme) {
+// $primary: map-get($theme, primary);
+// $accent: map-get($theme, accent);
+
+//   .mat-card-title, .mat-card-subtitle, .mat-raised-button {
+//     color: mat-color($accent);
+//   }
+//   .mat-card-header {
+//     background: mat-color($primary);
+//   }
+//   .mat-raised-button {
+//     background-color: mat-color($primary);
+//   }
+//   .mat-grid-tile, .mat-grid-tile-header, .mat-grid-tile-footer {
+//     // border: 1px solid red;
+//     box-sizing: border-box;
+//   }
+// }
+// .theme-light {
+//   @include style-theme($black-theme);
+// }

@@ -1,22 +1,24 @@
+import { ShellService } from './shell/shell.service';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'pokemon',
-  },
+  // ShellService.childRoutes([
+  //   {
+  //     path: 'pokemon',
+  //     loadChildren: () =>
+  //       import('./pokemon/pokemon.module').then((m) => m.PokemonModule),
+  //   },
+  // ]),
   {
     path: 'pokemon',
     loadChildren: () =>
       import('./pokemon/pokemon.module').then((m) => m.PokemonModule),
   },
-  // Sera direcionado na page de erro
   {
     path: '**',
-    pathMatch: 'full',
     redirectTo: 'pokemon',
+    pathMatch: 'full',
   },
 ];
 

@@ -1,0 +1,23 @@
+.mat-toolbar {
+  // background: #FFCB05;
+
+  .home_header_icon {
+    display: block;
+    height: 60px;
+    padding: 5px 10px;
+  }
+
+  .header_menu {
+    width: 100%;
+    padding: 0 10px;
+
+    a {
+      font-size: 18px;
+      color: #333;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+  }
+}

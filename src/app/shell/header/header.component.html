@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <div class="container" fxLayout="row" fxLayoutAlign="space-between center">
+    <img class="home_header_icon" src="../../assets/logo.png" alt="" />
+
+    <div class="header_menu">
+      <a href="#">Lista</a>
+      <a href="#">Compare</a>
+    </div>
+    <mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before" (change)="toggle($event)">
+      <mat-icon>bedtime</mat-icon>
+    </mat-slide-toggle>
+  </div>
+</mat-toolbar>
