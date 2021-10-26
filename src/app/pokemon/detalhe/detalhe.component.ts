@@ -20,14 +20,25 @@ export class DetalheComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getParametro();
+    this.detalhe();
+    this.teste();
   }
 
-  getParametro() {
-    console.log('pokemonId: ', this.pokemonID);
-    this.pokemonService.getDetalhePokemon(this.pokemonID).subscribe(
+  teste() {
+    this.pokemonService.getDetalhesAll(this.pokemonID).subscribe(
       (response) => {
-        console.log(response);
+        console.log('Pokemon - TESTE:', response);
+        // this.detalhePokemon = response;
+      },
+      (err) => console.error('Erro: ', err),
+      () => console.log('Detalhe Concluida')
+    );
+  }
+
+  detalhe() {
+    this.pokemonService.getDetalhesAll(this.pokemonID).subscribe(
+      (response) => {
+        console.log('Pokemon - Detalhe:', response);
         this.detalhePokemon = response;
       },
       (err) => console.error('Erro: ', err),

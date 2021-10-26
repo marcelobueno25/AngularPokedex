@@ -1,9 +1,24 @@
 footer {
   background: #eee;
   width: 100%;
-  height: 80px;
+  height: 45px;
 }
 .footer_content {
   height: 100%;
   width: 100%;
+  padding: 0 15px;
+
+  small {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .footer_content {
+    small {
+      text-align: center;
+    }
+  }
 }

@@ -8,6 +8,8 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [PokemonComponent, ListaComponent, DetalheComponent],
@@ -17,6 +19,8 @@ import { MatButtonModule } from '@angular/material/button';
     ComponentsModule,
     MatGridListModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
   ],
   exports: [PokemonComponent],
 })

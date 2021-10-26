@@ -14,10 +14,10 @@
 
   <mat-grid-tile colspan="4" role="listitem">
     <mat-grid-tile-header>
-      <p>#{{ detalhePokemon.id }}</p>
-      <p>-{{ detalhePokemon.name }}</p>
+      <p>#{{ detalhePokemon.detalhe?.id }}</p>
+      <p>-{{ detalhePokemon.detalhe?.name }}</p>
     </mat-grid-tile-header>
-    <img src="{{ detalhePokemon?.sprites?.front_default || '' }}" alt="pokemon" />
+    <img src="{{ detalhePokemon.detalhe?.sprites?.front_default || '' }}" alt="pokemon" />
     <mat-grid-tile-footer>
       <button mat-raised-button aria-label="Botão que volta para lista pokemon" routerLink="['pokemon']">Voltar</button>
     </mat-grid-tile-footer>

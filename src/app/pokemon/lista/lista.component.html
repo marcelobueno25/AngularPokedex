@@ -2,16 +2,14 @@
 <!-- <button (click)="detalhe('10')">Listar</button> -->
 
 <div class="lista_pokemons">
-  <div
-    class="lista_item"
-    *ngFor="let pokemon of pokemons.pokemon; let i = index"
-  >
-    <app-card-simple
-      id="{{ pokemon.url.split('/')[6] }}"
-      [name]="pokemon.name"
-      color="{{ pokemons.detalhe[i]?.color.name }}"
-    ></app-card-simple>
-  </div>
+  <div class="lista_item" *ngFor="let pokemon of pokemons; let i = index">
 
-  <!-- <a (click)="detalhe(pokemon.url.split('/')[6])">Detalhe</a> -->
+    <app-card-simple [id]="pokemon?.url.split('/')[6]" [name]="pokemon?.name">
+    </app-card-simple>
+  </div>
+  <mat-spinner *ngIf="loading" mode="indeterminate"></mat-spinner>
+
+  <mat-paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex" (page)="pageEvents($event)"
+    aria-label="Select page">
+  </mat-paginator>
 </div>

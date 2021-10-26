@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class CardSimpleComponent implements OnInit {
   @Input() id: any;
   @Input() name: any;
-  @Input() color: any;
 
   constructor(private router: Router) {}
 
