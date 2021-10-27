@@ -10,13 +10,11 @@ import { Observable, forkJoin } from 'rxjs';
   styleUrls: ['./lista.component.scss'],
 })
 export class ListaComponent implements OnInit {
-  // pokemons: List[] = [];
   loading: boolean = true;
-  pageIndex: number = 0;
-  pageSize: number = 20;
 
-  limit: number = 20;
-  length: number = 240;
+  pokemonlimite: number = 20;
+  paginatorTotal: number = 500;
+  paginatorItem: number = 0;
 
   pokemons: any[] = [];
 
@@ -27,24 +25,40 @@ export class ListaComponent implements OnInit {
   }
 
   listar() {
-    this.pokemonService.getListaPokemon(this.pageIndex, this.limit).subscribe(
-      (response) => {
-        this.pokemons = response;
-        console.log('Listar: ', this.pokemons);
-        // this.pokemons.push({
-        //   id: response.url.split('/')[6],
-        //   name: response.name,
-        //   imagem: `https://rawgit.com/PokeAPI/sprites/master/sprites/pokemon/${
-        //     response.url.split('/')[6]
-        //   }.png`,
-        // });
-      },
-      (err) => console.error('Erro: ', err),
-      () => {
-        console.log('Detalhe Concluida', this.pokemons);
-        this.loading = false;
-      }
-    );
+    this.pokemonService
+      .getListaAll(this.paginatorItem, this.pokemonlimite)
+      .subscribe(
+        (response: any) => {
+          // this.paginatorTotal = response.count;
+          response.results.forEach((pokemon: any) => {
+            // console.log('response: ', pokemon);
+            this.pokemons.push(pokemon);
+          });
+        },
+        (err) => console.error('Erro: ', err),
+        () => {
+          console.log('Detalhe Concluida', this.pokemons);
+          this.loading = false;
+        }
+      );
+    // this.pokemonService.getListaPokemon(this.pageIndex, this.limit).subscribe(
+    //   (response: any) => {
+    //     console.log('Listar: ', response);
+    //     this.paginatorTotal = response.count;
+    //     response.results.forEach((pokemon: any) => {
+    //       this.pokemonService
+    //         .getDetalhePokemon(pokemon.name)
+    //         .subscribe((detalhePokemon) => {
+    //           this.pokemons.push(detalhePokemon);
+    //         });
+    //     });
+    //   },
+    //   (err) => console.error('Erro: ', err),
+    //   () => {
+    //     console.log('Detalhe Concluida', this.pokemons);
+    //     this.loading = false;
+    //   }
+    // );
   }
 
   pageEvents(event: any) {
@@ -53,15 +67,10 @@ export class ListaComponent implements OnInit {
     // }
     // this.pageIndex = event.pageIndex * event.pageSize;
     // this.pageSize = this.pageIndex + event.pageSize;
-
-    this.pageIndex = event.pageIndex;
-    this.pageSize += event.pageSize;
-    this.length = event.length;
+    this.paginatorItem = event.pageIndex * event.pageSize;
     console.log(' this.event ', event);
-    console.log(' this.pageIndex ', this.pageIndex);
-    console.log(' this.pageSize ', this.pageSize);
-    this.listar();
+    // console.log(' this.pageIndex ', this.pageIndex);
+    // console.log(' this.pageSize ', this.pageSize);
     return event;
-    this.listar();
   }
 }

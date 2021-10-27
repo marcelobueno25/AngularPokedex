@@ -4,8 +4,17 @@
 
     <div class="header_menu">
     </div>
-    <mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before" (change)="toggle($event)">
-      <mat-icon>bedtime</mat-icon>
-    </mat-slide-toggle>
+
+    <div>
+      <mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before" (change)="alterarTema($event)">
+        <mat-icon>bedtime</mat-icon>
+      </mat-slide-toggle>
+    </div>
+
+    <div>
+      <mat-slide-toggle [(ngModel)]="is3d" (change)="alterarImagem($event)">
+      </mat-slide-toggle>
+    </div>
+
   </div>
 </mat-toolbar>

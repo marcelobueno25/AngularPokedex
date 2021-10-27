@@ -22,7 +22,7 @@ export class PokemonService {
   constructor(private http: HttpClient) {}
 
   getAPI(url: string) {
-    return this.http.get(`${url}`);
+    return this.http.get<any>(`${url}`);
   }
 
   getListaPokemon(page: number = 0, limit: number = 20): Observable<any> {
@@ -30,12 +30,31 @@ export class PokemonService {
       `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${page}`
     ).pipe(
       map((response: any) => {
-        return response.results;
+        return response;
       })
       // switchMap((productArray: any) => {
       //   return productArray;
       // })
     );
+  }
+
+  getListaAll(page: number = 0, limit: number = 20): Observable<any> {
+    return this.getAPI(
+      `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${page}`
+    ).pipe(
+      tap((res) => res),
+      tap((res: any) => {
+        res.results.map((resPokemons: any) => {
+          this.getDetalhePokemonLista(resPokemons.url).subscribe(
+            (res) => (resPokemons.status = res)
+          );
+        });
+      })
+    );
+  }
+
+  getDetalhePokemonLista(url: string): Observable<any> {
+    return this.getAPI(url).pipe(map((res) => res));
   }
 
   getDetalhePokemon(id: string): Observable<any> {

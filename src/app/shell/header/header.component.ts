@@ -8,14 +8,20 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 })
 export class HeaderComponent implements OnInit {
   isDarkTheme: boolean = false;
+  is3d: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  toggle(event: MatSlideToggleChange) {
+  alterarTema(event: MatSlideToggleChange) {
     this.isDarkTheme = event.checked;
     console.log('Toggle fired', this.isDarkTheme);
     let body = document.getElementsByTagName('body')[0];
     body.classList.toggle('dark-theme-mode');
+  }
+
+  alterarImagem(event: MatSlideToggleChange) {
+    this.is3d = event.checked;
   }
 }

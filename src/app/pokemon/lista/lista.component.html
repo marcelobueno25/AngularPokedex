@@ -4,12 +4,14 @@
 <div class="lista_pokemons">
   <div class="lista_item" *ngFor="let pokemon of pokemons; let i = index">
 
-    <app-card-simple [id]="pokemon?.url.split('/')[6]" [name]="pokemon?.name">
+    <app-card-simple [id]="pokemon?.status?.id" [name]="pokemon?.status?.name"
+      [bgcolor]="pokemon?.status?.types[0].type.name" [imagePokemon]="pokemon?.status?.sprites.front_default">
     </app-card-simple>
+
   </div>
   <mat-spinner *ngIf="loading" mode="indeterminate"></mat-spinner>
 
-  <mat-paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex" (page)="pageEvents($event)"
-    aria-label="Select page">
+  <mat-paginator [length]="paginatorTotal" [pageSize]="pokemonlimite" [pageIndex]="0"
+    (page)="pageEvents($event); pokemons = []; listar()" aria-label="Select page">
   </mat-paginator>
 </div>

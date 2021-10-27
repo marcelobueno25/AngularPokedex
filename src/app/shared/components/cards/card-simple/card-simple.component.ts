@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class CardSimpleComponent implements OnInit {
   @Input() id: any;
   @Input() name: any;
+  @Input() imagePokemon: any;
+  @Input() bgcolor: any;
 
   constructor(private router: Router) {}
 
