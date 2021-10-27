@@ -11,5 +11,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-paginator {
   width: 100%;
-  background: transparent;
+  background: transparent !important;
+  margin-top: 30px;
 }
