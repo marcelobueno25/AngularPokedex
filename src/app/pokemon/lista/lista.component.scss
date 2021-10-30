@@ -9,13 +9,3 @@
   text-transform: uppercase;
   font-weight: bold;
 }
-
-.lista_pokemons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  .lista_item {
-    padding: 10px;
-  }
-}

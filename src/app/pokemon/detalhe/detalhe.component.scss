@@ -1,0 +1,51 @@
+// .detalhe_main_image {
+
+//   img {
+//     height: 100px;
+//     transform: translateY(70px);
+//     padding: 20px;
+//   }
+// }
+// .detalhe_main {
+//   background-color: cadetblue;
+//   width: 100%;
+//   border-radius: 20px;
+//   padding-top: 70px;
+
+//   .detalhe_tipo_icon {
+//     height: 50px;
+//     width: 50px;
+//   }
+
+//   .detalhe_id, .detalhe_name {
+//     margin: 0;
+//   }
+
+// }
+
+.detalhe_main {
+  // border: 2px solid green;
+  .detalhe_voltar {
+    // border: 2px solid fuchsia;
+    img {}
+  }
+  .detalhe_conteudo {
+    // border: 2px solid orange;
+    .detalhe_conteudo_item {
+      // border: 2px solid blue;
+
+      .card_image_detalhe {
+        width: 350px;
+      }
+    }
+  }
+}
+
+
+mat-card {
+  // border: 2px solid hotpink
+}
+
+
+
+

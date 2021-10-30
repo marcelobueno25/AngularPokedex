@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ShellModule } from './shell/shell.module';
 import { PokemonModule } from './pokemon/pokemon.module';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     ShellModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

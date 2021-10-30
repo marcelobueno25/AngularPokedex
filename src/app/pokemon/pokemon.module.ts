@@ -1,3 +1,4 @@
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComponentsModule } from './../shared/components/components.module';
 import { ListaComponent } from './lista/lista.component';
 import { PokemonComponent } from './pokemon.component';
@@ -10,6 +11,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [PokemonComponent, ListaComponent, DetalheComponent],
@@ -21,6 +26,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatPaginatorModule,
+    FlexLayoutModule,
+    MatSliderModule,
+    MatDividerModule,
+    MatListModule,
+    MatCardModule,
   ],
   exports: [PokemonComponent],
 })

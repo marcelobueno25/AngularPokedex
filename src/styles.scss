@@ -1,7 +1,10 @@
 @import './themes/themes.scss';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  background-color: #eee;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container {
   max-width: 1124px;

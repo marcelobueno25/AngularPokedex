@@ -1,7 +1,7 @@
 <p class="lista_title">Lista de Pokemons</p>
 <!-- <button (click)="detalhe('10')">Listar</button> -->
 
-<div class="lista_pokemons">
+<div class="lista_pokemons" fxLayout="row wrap" fxLayoutGap="20px grid" fxFlexFill fxLayoutAlign="space-around center">
   <div class="lista_item" *ngFor="let pokemon of pokemons; let i = index">
 
     <app-card-simple [id]="pokemon?.status?.id" [name]="pokemon?.status?.name"
