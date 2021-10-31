@@ -15,6 +15,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [PokemonComponent, ListaComponent, DetalheComponent],
@@ -31,6 +32,7 @@ import { MatCardModule } from '@angular/material/card';
     MatDividerModule,
     MatListModule,
     MatCardModule,
+    MatIconModule,
   ],
   exports: [PokemonComponent],
 })

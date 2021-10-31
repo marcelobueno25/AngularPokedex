@@ -1,4 +1,45 @@
-@import './themes/themes.scss';
+@import '~@angular/material/theming';
+@include mat-core();
+
+@import './themes/theme-dark.scss';
+@import './themes/theme-light.scss';
+
+$background: map_get($mat-blue-grey, 900);
+
+ @include angular-material-theme($light-theme);
+
+.dark-theme-mode {
+  background: $background;
+  @include angular-material-theme($black-theme);
+}
+
+:root {
+  --color-dark: #000;
+  --color-light: #fff;
+
+  --color-grey-dark: #666;
+  --color-grey-light: #333;
+
+  --color-primary: #fff;
+  --color-secondary: #fff;
+
+  --color-blue: blue;
+  --color-yellow: yellow;
+
+  --font-weight-normal: normal;
+  --font-weight-medium: medium;
+  --font-weight-bold: bold;
+
+  --font-size-14: 14px;
+  --font-size-16: 14px;
+  --font-size-18: 14px;
+  --font-size-21: 14px;
+  --font-size-24: 14px;
+  --font-size-28: 14px;
+  --font-size-32: 14px;
+  --font-size-42: 14px;
+
+}
 
 html, body { height: 100%; }
 body {
@@ -16,4 +57,17 @@ body {
   width: 100%;
   background: transparent !important;
   margin-top: 30px;
+}
+
+.text-capitalize {
+ text-transform: capitalize;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.dark-theme-mode {
+  background: $background;
+  @include angular-material-theme($black-theme);
 }

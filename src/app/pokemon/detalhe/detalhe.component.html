@@ -26,13 +26,22 @@
   <mat-grid-tile colspan="2" role="listitem">4</mat-grid-tile>
 </mat-grid-list> -->
 
-<div class="detalhe_main" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="20px">
-  <div class="detalhe_voltar" fxLayout="row" fxLayoutAlign="space-evenly start">
-    <button mat-raised-button aria-label="Botão que voltar para lista pokemon" routerLink="['pokemon']">Voltar</button>
+<div class="detalhe_main" fxLayout="column wrap" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+
+  <div class="detalhe_voltar" fxFlex="grow" fxLayoutAlign="start stretch">
+    <button mat-raised-button aria-label="Botão que voltar para lista pokemon" routerLink="['pokemon']">
+      <mat-icon>arrow_back</mat-icon>
+      Voltar
+    </button>
   </div>
+
   <div class="detalhe_conteudo" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center stretch" fxLayoutGap="20px">
 
     <div class="detalhe_conteudo_item" fxFlex="50" fxLayout="column" fxLayoutGap="10px">
+
+      <mat-card>
+        <h1 class="text-uppercase">#{{ detalhePokemon.detalhe?.id }} {{ detalhePokemon.detalhe?.name }}</h1>
+      </mat-card>
 
       <mat-card fxLayout="row" fxLayoutAlign="center center">
         <img mat-card-image class="card_image_detalhe" [src]="detalhePokemon.detalhe?.sprites?.front_default" />
@@ -48,11 +57,6 @@
     </div>
 
     <div class="detalhe_conteudo_item" fxFlex="50" fxLayout="column" fxLayoutGap="10px">
-
-      <mat-card>
-        <p>ID: {{ detalhePokemon.detalhe?.id }}</p>
-        <p>Nome: {{ detalhePokemon.detalhe?.name }}</p>
-      </mat-card>
 
       <mat-card>
         <p>Geracao: {{ detalhePokemon.especie?.generation.name }}</p>
