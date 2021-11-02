@@ -1,16 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {
-  map,
-  switchMap,
-  mergeMap,
-  concatMap,
-  concat,
-  flatMap,
-  tap,
-  merge,
-  delay,
-} from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Observable, forkJoin } from 'rxjs';
 
 @Injectable({
@@ -32,9 +22,6 @@ export class PokemonService {
       map((response: any) => {
         return response;
       })
-      // switchMap((productArray: any) => {
-      //   return productArray;
-      // })
     );
   }
 
@@ -42,7 +29,6 @@ export class PokemonService {
     return this.getAPI(
       `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${page}`
     ).pipe(
-      tap((res) => res),
       tap((res: any) => {
         res.results.map((resPokemons: any) => {
           this.getDetalhePokemonLista(resPokemons.url).subscribe(
@@ -75,12 +61,4 @@ export class PokemonService {
     );
     return forkJoin({ detalhe, especie });
   }
-
-  // getPokemonAll(): Observable<any> {
-  //   return this.getAPI(`https://pokeapi.co/api/v2/pokemon`).pipe(
-  //     map((response: any) => {
-  //       return response.results;
-  //     })
-  //   );
-  // }
 }
