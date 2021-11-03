@@ -48,9 +48,14 @@
       </mat-card>
 
       <mat-card>
-        <div *ngFor="let stats of detalhePokemon.detalhe?.stats">
+        <!-- <div *ngFor="let stats of detalhePokemon.detalhe?.stats">
           <p>{{ stats.stat.name }}: <span>{{ stats.base_stat }}</span></p>
           <mat-slider disabled min="1" max="100" step="1" [value]="stats.base_stat"></mat-slider>
+        </div> -->
+        <div style="display: block">
+          <canvas baseChart [datasets]="radarChartData" [options]="radarChartOptions" [labels]="radarChartLabels"
+            [chartType]="radarChartType" [legend]="false">
+          </canvas>
         </div>
       </mat-card>
 

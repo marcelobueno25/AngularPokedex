@@ -1,3 +1,4 @@
+import { ChartsModule } from 'ng2-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ComponentsModule } from './../shared/components/components.module';
 import { ListaComponent } from './lista/lista.component';
@@ -33,6 +34,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatListModule,
     MatCardModule,
     MatIconModule,
+    ChartsModule,
   ],
   exports: [PokemonComponent],
 })
