@@ -4,6 +4,32 @@
 @import './themes/theme-dark.scss';
 @import './themes/theme-light.scss';
 
+// @import '~bootstrap/scss/bootstrap';
+
+
+@font-face {
+  font-family: 'dongle-light';
+  src: url(assets/fonts/Dongle-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'dongle-regular';
+  src: url(assets/fonts/Dongle-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'dongle-bold';
+  src: url(assets/fonts/Dongle-Bold.ttf) format("truetype");
+}
+
+// @font-face {
+//   font-family: 'MyWebFont';
+//   src: url('webfont.eot'); /* IE9 Compat Modes */
+//   src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+//        url('webfont.woff') format('woff'), /* Modern Browsers */
+//        url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+//        url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+// }
+
+
 $background: map_get($mat-blue-grey, 900);
 
  @include angular-material-theme($light-theme);
@@ -45,9 +71,10 @@ $background: map_get($mat-blue-grey, 900);
 
 html, body { height: 100%; }
 body {
+  font-family: 'dongle-regular';
   background-color: #eee;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif; }
+}
 
 .container {
   max-width: 1124px;
@@ -73,3 +100,9 @@ body {
   background: $background;
   @include angular-material-theme($black-theme);
 }
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";

@@ -47,6 +47,8 @@ export class DetalheComponent implements OnInit {
     },
   };
 
+  type: 'danger' | 'warning' | 'info' | 'success' = 'info';
+
   constructor(
     private router: ActivatedRoute,
     private pokemonService: PokemonService
@@ -56,18 +58,23 @@ export class DetalheComponent implements OnInit {
 
   ngOnInit(): void {
     this.detalhe();
-    this.teste();
   }
 
-  teste() {
-    this.pokemonService.getDetalhesAll(this.pokemonID).subscribe(
-      (response) => {
-        console.log('Pokemon - TESTE:', response);
-        // this.detalhePokemon = response;
-      },
-      (err) => console.error('Erro: ', err),
-      () => console.log('Detalhe Concluida')
-    );
+  random(): void {
+    let value = this.detalhePokemon.especie?.capture_rate;
+    let type: 'danger' | 'warning' | 'info' | 'success';
+
+    if (value < 100) {
+      type = 'danger';
+    } else if (value < 150) {
+      type = 'warning';
+    } else if (value < 200) {
+      type = 'info';
+    } else {
+      type = 'success';
+    }
+
+    this.type = type;
   }
 
   detalhe() {
@@ -81,7 +88,10 @@ export class DetalheComponent implements OnInit {
         });
       },
       (err) => console.error('Erro: ', err),
-      () => console.log('Detalhe Concluida')
+      () => {
+        this.random();
+        console.log('Detalhe Concluida');
+      }
     );
   }
 }

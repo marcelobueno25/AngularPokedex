@@ -68,6 +68,9 @@
         <p>Cor: {{ detalhePokemon.especie?.color.name }}</p>
         <p>Tipo: {{ detalhePokemon.detalhe?.types[0].type.name }}</p>
         <p>Habitat: {{ detalhePokemon.especie?.habitat.name }}</p>
+        <progressbar [max]="255" [value]="detalhePokemon.especie?.capture_rate" [type]="type" [striped]="true"
+          [animate]="true"><i>{{ detalhePokemon.especie?.capture_rate }} / 255</i>
+        </progressbar>
         <p>A taxa de captura básica; até 255. Quanto maior o número, mais fácil será a captura.: {{
           detalhePokemon.especie?.capture_rate }}</p>
       </mat-card>
@@ -88,6 +91,7 @@
     </div>
   </div>
 </div>
+
 
 <!-- <button mat-raised-button aria-label="Botão que volta para lista pokemon" routerLink="['pokemon']">Voltar</button>
 
