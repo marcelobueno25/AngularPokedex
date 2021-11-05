@@ -71,9 +71,19 @@ $background: map_get($mat-blue-grey, 900);
 
 html, body { height: 100%; }
 body {
-  font-family: 'dongle-regular';
   background-color: #eee;
   margin: 0;
+}
+
+* {
+  font-family: 'dongle-regular';
+  font-size: 25px;
+  line-height: 1.2 !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  margin: 0;
+  padding: 0;
 }
 
 .container {

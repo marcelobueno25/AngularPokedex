@@ -1,12 +1,19 @@
 <mat-card class="card">
-  <mat-card-header class="card_header">
+  <!-- <mat-card-header class="card_header">
     <div color="primary" mat-card-avatar class="card_header_avatar">
-      <!-- <img class="card_header_icon" src="../../../../../assets/pokeball_4.png" alt="" /></div> -->
       <img class="card_header_icon" src="../../../../../assets/types/{{ bgcolor }}.png" alt="" />
     </div>
     <mat-card-subtitle class="card_header_subtitle"># {{ id }}</mat-card-subtitle>
-
     <mat-card-title class="card_header_title">{{ name }}</mat-card-title>
+  </mat-card-header> -->
+  <mat-card-header class="card_header">
+    <div mat-card-avatar class="card_header_avatar">
+      <img class="card_header_icon" src="../../../../../assets/types/{{ bgcolor }}.png" alt="" />
+    </div>
+    <div>
+      <h4 class="card_header_subtitle"># {{ id }}</h4>
+      <h3 class="card_header_title">{{ name }}</h3>
+    </div>
   </mat-card-header>
 
   <div mat-card-content class="mat-card-content">
