@@ -4,10 +4,11 @@
 <div class="lista_pokemons" fxLayout.gt-xs="row wrap" fxLayoutGap.gt-xs="20px grid"
   fxLayoutAlign.gt-xs="space-around center" fxLayout.lt-sm="column" fxLayoutGap.lt-sm="20px"
   fxLayoutAlign.lt-sm="space-around stretch">
-  <div class="lista_item" *ngFor="let pokemon of pokemons; let i = index">
-
+  <div class="lista_item" *ngFor="let pokemon of pokemons">
     <app-card-simple [id]="pokemon?.status?.id" [name]="pokemon?.status?.name"
-      [bgcolor]="pokemon?.status?.types[0].type.name" [imagePokemon]="pokemon?.status?.sprites.front_default">
+      [bgcolor]="pokemon?.status?.types[0].type.name"
+      imageGif="../../../../../assets/pokemonGif/{{ pokemon?.status?.id }}.gif"
+      [imagePokemon]="pokemon?.status?.sprites.front_default">
     </app-card-simple>
 
   </div>

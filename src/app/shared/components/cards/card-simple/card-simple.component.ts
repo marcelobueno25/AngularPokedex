@@ -11,7 +11,7 @@ export class CardSimpleComponent implements OnInit {
   @Input() name: any;
   @Input() imagePokemon: any;
   @Input() bgcolor: any;
-
+  @Input() imageGif: any;
   constructor(private router: Router) {}
 
   ngOnInit(): void {}

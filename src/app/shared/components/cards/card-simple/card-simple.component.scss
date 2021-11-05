@@ -16,7 +16,8 @@
     border-radius: 10px 10px 0 0;
 
     .card_header_avatar img {
-      width: 100%;
+      height: 100%;
+      width: 40px;
     }
 
     .card_header_title, .card_header_subtitle {
@@ -30,8 +31,8 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 20px 0;
-    height: 130px;
+    padding: 30px 0;
+    height: 120px;
 
     .bg-color {
       position: absolute;
@@ -53,12 +54,11 @@
     .card_image_gif {
       display: inline-block;
       position: relative;
-      width: initial;
       margin: 0;
       z-index: 2;
+      width: 100px;
       width: auto;
-      max-width: 100px;
-      height: auto;
+      height: 100%;
     }
   }
 
