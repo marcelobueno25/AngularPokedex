@@ -18,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { DataService } from '../shared/services/data.service';
 
 @NgModule({
   declarations: [PokemonComponent, ListaComponent, DetalheComponent],
@@ -38,6 +39,7 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
     ChartsModule,
     ProgressbarModule,
   ],
+  providers: [DataService],
   exports: [PokemonComponent],
 })
 export class PokemonModule {}

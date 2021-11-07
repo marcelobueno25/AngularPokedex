@@ -6,15 +6,15 @@
     </div>
 
     <div>
-      <mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before" (change)="alterarTema($event)">
+      <mat-slide-toggle [(ngModel)]="isDarkTheme" labelPosition="before" (change)="updateTema()">
         <mat-icon>bedtime</mat-icon>
       </mat-slide-toggle>
     </div>
 
-    <div>
+    <!-- <div>
       <mat-slide-toggle [(ngModel)]="is3d" (change)="alterarImagem($event)">
       </mat-slide-toggle>
-    </div>
+    </div> -->
 
   </div>
 </mat-toolbar>
