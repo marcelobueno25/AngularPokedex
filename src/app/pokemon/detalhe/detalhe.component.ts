@@ -14,6 +14,21 @@ export class DetalheComponent implements OnInit {
   pokemonID: string = '';
   detalhePokemon: any = {};
 
+  detalheId: string = '--';
+  detalheName: string = '--';
+
+  detalheImage: any = '--';
+  detalheGeracao: string = '--';
+  detalheCor: string = '--';
+  detalheTipo: string = '--';
+  detalheHabitat: string = '--';
+
+  detalheLargura: string = '--';
+  detalheAltura: string = '--';
+
+  detalheHabilidade: any = '--';
+  detalheExperiencia: string = '--';
+
   public radarChartData: ChartDataSets[] = [{ data: [], label: 'Habilidades' }];
   public radarChartType: ChartType = 'radar';
   public radarChartLabels: Label[] = [
@@ -80,8 +95,7 @@ export class DetalheComponent implements OnInit {
   detalhe() {
     this.pokemonService.getDetalhesAll(this.pokemonID).subscribe(
       (response) => {
-        console.log('Pokemon - Detalhe:', response);
-        this.detalhePokemon = response;
+        this.atualizarDados(response);
         this.detalhePokemon.detalhe?.stats.map((ability: any) => {
           const valorHabilidade: number = ability.base_stat;
           this.radarChartData[0].data?.push(valorHabilidade);
@@ -93,5 +107,25 @@ export class DetalheComponent implements OnInit {
         console.log('Detalhe Concluida');
       }
     );
+  }
+
+  atualizarDados(pokemon: any) {
+    this.detalhePokemon = pokemon;
+
+    this.detalheId = pokemon.detalhe?.id;
+    this.detalheName = pokemon.detalhe?.name;
+
+    this.detalheImage = pokemon.detalhe?.sprites?.front_default;
+
+    this.detalheGeracao = pokemon.especie?.generation.url.split('/')[6];
+    this.detalheCor = pokemon.especie?.color.name;
+    this.detalheTipo = pokemon.detalhe?.types[0].type.name;
+    this.detalheHabitat = pokemon.especie?.habitat.name;
+
+    this.detalheLargura = pokemon.detalhe?.weight;
+    this.detalheAltura = pokemon.detalhe?.height;
+
+    this.detalheHabilidade = pokemon.detalhe?.abilities;
+    this.detalheExperiencia = pokemon.detalhe?.base_experience;
   }
 }

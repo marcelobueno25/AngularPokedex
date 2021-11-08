@@ -1,73 +1,18 @@
-@import '~@angular/material/theming';
-@include mat-core();
+@use '@angular/material' as mat;
+@import './themes/colors.scss';
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
 
 @import './themes/theme-dark.scss';
 @import './themes/theme-light.scss';
 
-// @import '~bootstrap/scss/bootstrap';
+@include mat.core();
 
+$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$my-theme: mat.define-light-theme($my-primary,$my-accent);
+@include mat.all-component-themes($my-theme);
 
-@font-face {
-  font-family: 'dongle-light';
-  src: url(assets/fonts/Dongle-Light.ttf) format("truetype");
-}
-@font-face {
-  font-family: 'dongle-regular';
-  src: url(assets/fonts/Dongle-Regular.ttf) format("truetype");
-}
-@font-face {
-  font-family: 'dongle-bold';
-  src: url(assets/fonts/Dongle-Bold.ttf) format("truetype");
-}
-
-// @font-face {
-//   font-family: 'MyWebFont';
-//   src: url('webfont.eot'); /* IE9 Compat Modes */
-//   src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-//        url('webfont.woff') format('woff'), /* Modern Browsers */
-//        url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-//        url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-// }
-
-
-$background: map_get($mat-blue-grey, 900);
-
- @include angular-material-theme($light-theme);
-
-.dark-theme-mode {
-  background: $background;
-  @include angular-material-theme($black-theme);
-}
-
-:root {
-  --color-dark: #000;
-  --color-light: #fff;
-
-  --color-grey-dark: #666;
-  --color-grey-light: #333;
-
-  --color-primary: #fff;
-  --color-secondary: #fff;
-
-  --color-blue-dark: #2A3050;
-  --color-blue-light: #343D64;
-
-  --color-yellow: yellow;
-
-  --font-weight-normal: normal;
-  --font-weight-medium: medium;
-  --font-weight-bold: bold;
-
-  --font-size-14: 14px;
-  --font-size-16: 14px;
-  --font-size-18: 14px;
-  --font-size-21: 14px;
-  --font-size-24: 14px;
-  --font-size-28: 14px;
-  --font-size-32: 14px;
-  --font-size-42: 14px;
-
-}
 
 html, body { height: 100%; }
 body {
@@ -105,13 +50,3 @@ h1, h2, h3, h4, h5, h6, p, a {
   text-transform: uppercase;
 }
 
-.dark-theme-mode {
-  background: $background;
-  @include angular-material-theme($black-theme);
-}
-
-/* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
-
-/* Importing Datepicker SCSS file. */
-@import "~ngx-bootstrap/datepicker/bs-datepicker";

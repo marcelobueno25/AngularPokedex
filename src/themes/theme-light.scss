@@ -1,7 +1,53 @@
-@import '~@angular/material/theming';
+body:not(.tema-escuro) {
+  background-color: var(--color-grey-light);
 
-$light-primary: mat-palette($mat-light-blue);
-$light-accent:  mat-palette($mat-light-green);
-$light-warn:  mat-palette($mat-red);
+  .header {
+    background-color: var(--color-secondary);
 
-$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+    mat-slide-toggle {
+      .mat-slide-toggle-thumb {
+        background: var(--color-primary);
+      }
+
+      .mat-slide-toggle-bar {
+        background-color: rgba(0, 0, 0, 0.38);
+      }
+    }
+  }
+
+  .detalhe_voltar {
+    .btn_detalhe_voltar {
+      background: var(--color-secondary);
+    }
+  }
+
+
+
+  .detalhe_card {
+    background: var(--color-light);
+
+    p, span, h1 {
+      color: var(--color-dark);
+    }
+
+    h2, h3, h4, h5, h6 {
+      color: var(--color-secondary);
+    }
+  }
+
+  .lista_pokemons {
+    .card {
+      p, span, h1, h2, h3, h4, h5, h6 {
+        color: var(--color-dark);
+      }
+
+      button {
+        background-color: var(--color-secondary);
+
+        span {
+          color: var(--color-light);
+        }
+      }
+    }
+  }
+}

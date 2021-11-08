@@ -29,7 +29,7 @@
 <div class="detalhe_main" fxLayout="column wrap" fxLayoutAlign="start stretch" fxLayoutGap="10px">
 
   <div class="detalhe_voltar" fxFlex="grow" fxLayoutAlign="start stretch">
-    <button mat-raised-button aria-label="Botão que voltar para lista pokemon" routerLink="['pokemon']">
+    <button class="btn_detalhe_voltar" routerLink="['pokemon']">
       <mat-icon>arrow_back</mat-icon>
       Voltar
     </button>
@@ -39,15 +39,15 @@
 
     <div class="detalhe_conteudo_item" fxFlex="50" fxLayout="column" fxLayoutGap="10px">
 
-      <mat-card>
-        <h1 class="text-uppercase">#{{ detalhePokemon.detalhe?.id }} {{ detalhePokemon.detalhe?.name }}</h1>
+      <mat-card class="detalhe_card">
+        <h1 class="text-uppercase">#{{ detalheId }} {{ detalheName }}</h1>
       </mat-card>
 
-      <mat-card fxLayout="row" fxLayoutAlign="center center">
-        <img mat-card-image class="card_image_detalhe" [src]="detalhePokemon.detalhe?.sprites?.front_default" />
+      <mat-card class="detalhe_card" fxLayout="row" fxLayoutAlign="center center">
+        <img mat-card-image class="card_image_detalhe" [src]="detalheImage" />
       </mat-card>
 
-      <mat-card>
+      <mat-card class="detalhe_card">
         <!-- <div *ngFor="let stats of detalhePokemon.detalhe?.stats">
           <p>{{ stats.stat.name }}: <span>{{ stats.base_stat }}</span></p>
           <mat-slider disabled min="1" max="100" step="1" [value]="stats.base_stat"></mat-slider>
@@ -63,30 +63,33 @@
 
     <div class="detalhe_conteudo_item" fxFlex="50" fxLayout="column" fxLayoutGap="10px">
 
-      <mat-card>
-        <p>Geracao: {{ detalhePokemon.especie?.generation.name }}</p>
-        <p>Cor: {{ detalhePokemon.especie?.color.name }}</p>
-        <p>Tipo: {{ detalhePokemon.detalhe?.types[0].type.name }}</p>
-        <p>Habitat: {{ detalhePokemon.especie?.habitat.name }}</p>
+      <mat-card class="detalhe_card">
+        <h3>Geração: <span>Geração {{ detalheGeracao }}</span></h3>
+        <h3>Cor: <span class="detalhe_color" [style.background-color]="detalheCor ?? '#555'"></span>
+        </h3>
+        <h3>Tipo: <span>{{ detalheTipo }}</span></h3>
+        <h3>Habitat: <span>{{ detalheHabitat }}</span></h3>
+        <h3>Taxa de Captura: </h3>
         <progressbar [max]="255" [value]="detalhePokemon.especie?.capture_rate" [type]="type" [striped]="true"
           [animate]="true"><i>{{ detalhePokemon.especie?.capture_rate }} / 255</i>
         </progressbar>
-        <p>A taxa de captura básica; até 255. Quanto maior o número, mais fácil será a captura.: {{
-          detalhePokemon.especie?.capture_rate }}</p>
+        <p class="detalhe_text_desc">A taxa de captura básica; até 255. <br /> Quanto maior o número, mais fácil será a
+          captura.</p>
       </mat-card>
 
-      <mat-card>
-        <p>Largura: {{ detalhePokemon.detalhe?.weight }}</p>
-        <p>Altura: {{ detalhePokemon.detalhe?.height }}</p>
+      <mat-card class="detalhe_card">
+        <h3>Largura: <span>{{ detalheLargura }} cm</span></h3>
+        <h3>Altura: <span>{{ detalheAltura }} cm</span></h3>
       </mat-card>
 
-      <mat-card>
-        <p>Habilidade: <span *ngFor="let habilidade of detalhePokemon.detalhe?.abilities">{{ habilidade.ability.name
-            }} | </span></p>
-        <p>Itens que Ajuda na Evolucao: <span *ngFor="let habilidade of detalhePokemon.detalhe?.held_items">{{
+      <mat-card class="detalhe_card">
+        <h3>Habilidade: <span *ngFor="let habilidade of detalheHabilidade">{{ habilidade.ability?.name
+            }} | </span></h3>
+        <h3 *ngIf="detalhePokemon.detalhe?.held_items.leght > 0">Itens que Ajuda na Evolucao: <span
+            *ngFor="let habilidade of detalhePokemon.detalhe?.held_items">{{
             habilidade.item.name
-            }} | </span></p>
-        <p>Experiência de Base: {{ detalhePokemon.detalhe?.base_experience }}</p>
+            }} | </span></h3>
+        <h3>Experiência de Base: <span>{{ detalheExperiencia }}</span></h3>
       </mat-card>
     </div>
   </div>

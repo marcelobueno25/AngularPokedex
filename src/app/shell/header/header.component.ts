@@ -44,9 +44,9 @@ export class HeaderComponent implements OnInit {
   setTema(tema: string) {
     let body = document.getElementsByTagName('body')[0];
     if (tema == 'Escuro') {
-      body.classList.add('dark-theme-mode');
+      body.classList.add('tema-escuro');
     } else {
-      body.classList.remove('dark-theme-mode');
+      body.classList.remove('tema-escuro');
     }
   }
 

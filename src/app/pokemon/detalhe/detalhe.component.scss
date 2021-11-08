@@ -1,52 +1,47 @@
-// .detalhe_main_image {
-
-//   img {
-//     height: 100px;
-//     transform: translateY(70px);
-//     padding: 20px;
-//   }
-// }
-// .detalhe_main {
-//   background-color: cadetblue;
-//   width: 100%;
-//   border-radius: 20px;
-//   padding-top: 70px;
-
-//   .detalhe_tipo_icon {
-//     height: 50px;
-//     width: 50px;
-//   }
-
-//   .detalhe_id, .detalhe_name {
-//     margin: 0;
-//   }
-
-// }
-
 .detalhe_main {
   padding: 10px;
-  // border: 2px solid green;
   .detalhe_voltar {
-    // border: 2px solid fuchsia;
-    img {}
+    .btn_detalhe_voltar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 20px;
+      border-radius: 10px;
+      font-weight: 800;
+      transition: .5s;
+      border: none;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
   }
   .detalhe_conteudo {
-    // border: 2px solid orange;
     .detalhe_conteudo_item {
-      // border: 2px solid blue;
+      h3 {
+        font-size: 20px;
 
+        span {
+          font-size: 17px;
+          text-transform: capitalize;
+        }
+      }
+      .detalhe_text_desc {
+        margin: 10px 0;
+        font-size: 12px;
+        text-align: left;
+      }
+      .detalhe_color {
+        display: inline-block;
+        height: 11px;
+        width: 41px;
+        border-radius: 11px;
+        margin-right: 10px;
+        border: 1px solid #333;
+      }
       .card_image_detalhe {
         width: 350px;
       }
     }
   }
 }
-
-
-mat-card {
-  // border: 2px solid hotpink
-}
-
-
-
-

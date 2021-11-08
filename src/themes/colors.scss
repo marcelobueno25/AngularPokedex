@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'dongle-light';
+  src: url(../assets/fonts/Dongle-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'dongle-regular';
+  src: url(../assets/fonts/Dongle-Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: 'dongle-bold';
+  src: url(../assets/fonts/Dongle-Bold.ttf) format("truetype");
+}
+
+:root {
+  --color-dark: #222;
+  --color-light: #fff;
+
+  --color-grey-light: #EEEEEE;
+  --color-grey-dark: #263238;
+
+  --color-primary: #FF9800;
+  --color-secondary: #03A9F4;
+
+  // --color-primary-dark: #FF9800;
+  // --color-secondary-dark: #03A9F4;
+
+  --color-blue-dark: #2A3050;
+  --color-blue-light: #343D64;
+
+  --color-yellow: yellow;
+  --color-blue: blue;
+
+  --font-weight-normal: normal;
+  --font-weight-medium: medium;
+  --font-weight-bold: bold;
+
+  --font-size-14: 14px;
+  --font-size-16: 14px;
+  --font-size-18: 14px;
+  --font-size-21: 14px;
+  --font-size-24: 14px;
+  --font-size-28: 14px;
+  --font-size-32: 14px;
+  --font-size-42: 14px;
+}
