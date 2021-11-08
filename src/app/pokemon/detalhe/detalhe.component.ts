@@ -14,20 +14,20 @@ export class DetalheComponent implements OnInit {
   pokemonID: string = '';
   detalhePokemon: any = {};
 
-  detalheId: string = '--';
-  detalheName: string = '--';
+  detalheId: any = '';
+  detalheName: any = '';
 
-  detalheImage: any = '--';
-  detalheGeracao: string = '--';
-  detalheCor: string = '--';
-  detalheTipo: string = '--';
-  detalheHabitat: string = '--';
+  detalheImage: any = '';
+  detalheGeracao: any = '';
+  detalheCor: any = '';
+  detalheTipo: any = '';
+  detalheHabitat: any = '';
 
-  detalheLargura: string = '--';
-  detalheAltura: string = '--';
+  detalheLargura: any = '';
+  detalheAltura: any = '';
 
-  detalheHabilidade: any = '--';
-  detalheExperiencia: string = '--';
+  detalheHabilidade: any = '';
+  detalheExperiencia: any = '';
 
   public radarChartData: ChartDataSets[] = [{ data: [], label: 'Habilidades' }];
   public radarChartType: ChartType = 'radar';
