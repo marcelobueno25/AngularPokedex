@@ -9,7 +9,6 @@ import { PokemonService } from 'src/app/shared/services/pokemon.service';
   styleUrls: ['./lista.component.scss'],
 })
 export class ListaComponent implements OnInit {
-  loading: boolean = true;
   pokemonlimite: number = 20;
   paginatorTotal: number = 500;
   paginatorItem: number = Number(localStorage.getItem('page')) ?? 0;
@@ -31,9 +30,7 @@ export class ListaComponent implements OnInit {
           this.pokemons[response.index] = response.conteudo;
         },
         (err) => console.error('Erro: ', err),
-        () => {
-          this.loading = false;
-        }
+        () => console.error('Concluido')
       );
   }
 

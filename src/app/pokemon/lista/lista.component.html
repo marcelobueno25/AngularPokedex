@@ -10,7 +10,6 @@
       [imagePokemon]="pokemon?.status?.sprites.front_default">
     </app-card-simple>
   </div>
-  <mat-spinner *ngIf="loading" mode="indeterminate"></mat-spinner>
 
   <mat-paginator [length]="paginatorTotal" [pageSize]="pokemonlimite" [pageIndex]="paginatorItem"
     (page)="pageEvents($event);  listar()" aria-label="Select page">
