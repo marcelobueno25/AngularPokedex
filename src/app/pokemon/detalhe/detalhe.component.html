@@ -39,19 +39,51 @@
 
     <div class="detalhe_conteudo_item" fxFlex="50" fxLayout="column" fxLayoutGap="10px">
 
-      <mat-card class="detalhe_card">
-        <h1 class="text-uppercase">#{{ detalheId }} {{ detalheName }}</h1>
+      <mat-card class="detalhe_card" fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="10px">
+          <div>
+            <h2 class="text-uppercase detalhe_card_id">#{{ detalheId }}</h2>
+          </div>
+          <div>
+            <h1 class="text-uppercase">{{ detalheName }}</h1>
+            <h2 class="text-uppercase">{{ detalheNameJp }}</h2>
+          </div>
+        </div>
+        <img class="detalhe_icon_tipo" src="../../../../../assets/types/{{ detalheTipo }}.png" alt="" />
       </mat-card>
 
       <mat-card class="detalhe_card" fxLayout="row" fxLayoutAlign="center center">
         <img mat-card-image class="card_image_detalhe" [src]="detalheImage" />
       </mat-card>
 
+      <mat-card class="detalhe_card" fxLayout="row wrap" fxLayoutAlign="center center">
+        <div class="detalhe_hp detalhe_habilidades">
+          <span class="detalhe_habilidades_title">HP</span>
+          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[0].base_stat }}</span>
+        </div>
+        <div class="detalhe_atk detalhe_habilidades">
+          <span class="detalhe_habilidades_title">Atk</span>
+          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[1].base_stat }}</span>
+        </div>
+        <div class="detalhe_def detalhe_habilidades">
+          <span class="detalhe_habilidades_title">Def</span>
+          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[2].base_stat }}</span>
+        </div>
+        <div class="detalhe_spA detalhe_habilidades">
+          <span class="detalhe_habilidades_title">SpA</span>
+          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[3].base_stat }}</span>
+        </div>
+        <div class="detalhe_spD detalhe_habilidades">
+          <span class="detalhe_habilidades_title">SpD</span>
+          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[4].base_stat }}</span>
+        </div>
+        <div class="detalhe_sPD detalhe_habilidades">
+          <span class="detalhe_habilidades_title">SPD</span>
+          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[5].base_stat }}</span>
+        </div>
+      </mat-card>
+
       <mat-card class="detalhe_card">
-        <!-- <div *ngFor="let stats of detalhePokemon.detalhe?.stats">
-          <p>{{ stats.stat.name }}: <span>{{ stats.base_stat }}</span></p>
-          <mat-slider disabled min="1" max="100" step="1" [value]="stats.base_stat"></mat-slider>
-        </div> -->
         <div style="display: block">
           <canvas baseChart [datasets]="radarChartData" [options]="radarChartOptions" [labels]="radarChartLabels"
             [chartType]="radarChartType" [legend]="false" [colors]="lineChartColors">

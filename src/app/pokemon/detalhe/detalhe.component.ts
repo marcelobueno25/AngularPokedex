@@ -16,6 +16,7 @@ export class DetalheComponent implements OnInit {
 
   detalheId: any = '';
   detalheName: any = '';
+  detalheNameJp: any = '';
 
   detalheImage: any = '';
   detalheGeracao: any = '';
@@ -111,9 +112,12 @@ export class DetalheComponent implements OnInit {
 
   atualizarDados(pokemon: any) {
     this.detalhePokemon = pokemon;
+    console.log('pokemon: ', this.detalhePokemon);
 
     this.detalheId = pokemon.detalhe?.id;
     this.detalheName = pokemon.detalhe?.name;
+
+    this.detalheNameJp = pokemon.especie?.names[9].name;
 
     this.detalheImage = pokemon.detalhe?.sprites?.front_default;
 
@@ -127,5 +131,7 @@ export class DetalheComponent implements OnInit {
 
     this.detalheHabilidade = pokemon.detalhe?.abilities;
     this.detalheExperiencia = pokemon.detalhe?.base_experience;
+
+    console.log('this.detalheNameJp: ', this.detalheNameJp);
   }
 }

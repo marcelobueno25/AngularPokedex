@@ -9,7 +9,7 @@ import { DataService } from 'src/app/shared/services/data.service';
   providers: [DataService],
 })
 export class HeaderComponent implements OnInit {
-  isDarkTheme: boolean = false;
+  isDarkTheme: boolean = true;
 
   constructor() {
     // dadosService.tema$.subscribe((tema) => {
