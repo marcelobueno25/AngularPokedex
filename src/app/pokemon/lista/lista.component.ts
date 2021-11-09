@@ -14,8 +14,7 @@ export class ListaComponent implements OnInit {
   paginatorTotal: number = 500;
   paginatorItem: number = Number(localStorage.getItem('page')) ?? 0;
   paginatorAtual: number = this.paginatorItem * this.pokemonlimite;
-
-  pokemons: any[] = [];
+  pokemons: any[] = Array(this.pokemonlimite);
 
   constructor(private pokemonService: PokemonService, private router: Router) {}
 
@@ -24,19 +23,15 @@ export class ListaComponent implements OnInit {
   }
 
   listar() {
+    this.pokemons = Array(this.pokemonlimite);
     this.pokemonService
       .getListaAll(this.paginatorAtual, this.pokemonlimite)
       .subscribe(
         (response: any) => {
-          // this.paginatorTotal = response.count;
-          response.results.forEach((pokemon: any) => {
-            // console.log('response: ', pokemon);
-            this.pokemons.push(pokemon);
-          });
+          this.pokemons[response.index] = response.conteudo;
         },
         (err) => console.error('Erro: ', err),
         () => {
-          console.log('Detalhe Concluida', this.pokemons);
           this.loading = false;
         }
       );

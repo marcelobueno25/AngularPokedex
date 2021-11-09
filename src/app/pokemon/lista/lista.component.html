@@ -6,15 +6,13 @@
   fxLayoutAlign.lt-sm="space-around stretch">
   <div class="lista_item" *ngFor="let pokemon of pokemons">
     <app-card-simple [id]="pokemon?.status?.id" [name]="pokemon?.status?.name"
-      [bgcolor]="pokemon?.status?.types[0].type.name"
-      imageGif="../../../../../assets/pokemonGif/{{ pokemon?.status?.id }}.gif"
+      [bgcolor]="pokemon?.status?.types[0].type.name" [imageGif]="pokemon?.status?.id"
       [imagePokemon]="pokemon?.status?.sprites.front_default">
     </app-card-simple>
-
   </div>
   <mat-spinner *ngIf="loading" mode="indeterminate"></mat-spinner>
 
   <mat-paginator [length]="paginatorTotal" [pageSize]="pokemonlimite" [pageIndex]="paginatorItem"
-    (page)="pageEvents($event); pokemons = []; listar()" aria-label="Select page">
+    (page)="pageEvents($event);  listar()" aria-label="Select page">
   </mat-paginator>
 </div>

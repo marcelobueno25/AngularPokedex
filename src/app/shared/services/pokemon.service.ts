@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs/operators';
+import { map, mergeMap, delay, retry } from 'rxjs/operators';
 import { Observable, forkJoin } from 'rxjs';
 
 @Injectable({
@@ -29,13 +29,14 @@ export class PokemonService {
     return this.getAPI(
       `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${page}`
     ).pipe(
-      tap((res: any) => {
-        res.results.map((resPokemons: any) => {
-          this.getDetalhePokemonLista(resPokemons.url).subscribe(
-            (res) => (resPokemons.status = res)
-          );
-        });
-      })
+      mergeMap((response) => response.results),
+      map((res: any, i: any) => {
+        this.getDetalhePokemonLista(res.url).subscribe(
+          (status) => (res.status = status)
+        );
+        return { conteudo: res, index: i };
+      }),
+      retry()
     );
   }
 
