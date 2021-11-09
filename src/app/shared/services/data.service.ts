@@ -7,16 +7,23 @@ import { Subject } from 'rxjs';
 export class DataService {
   // Observable string sources
   private temaSource = new Subject<boolean>();
+  private pageSource = new Subject<number>();
   // Observable string streams
   tema$ = this.temaSource.asObservable();
+  page$ = this.pageSource.asObservable();
 
   constructor() {}
 
-  getTema(tema: boolean) {
-    this.temaSource.next(tema);
-  }
   setTema(tema: boolean) {
     this.temaSource.next(tema);
+  }
+
+  getPage() {
+    return this.page$;
+  }
+
+  setPage(page: number) {
+    this.pageSource.next(page);
   }
 
   // getTema() {

@@ -26,7 +26,7 @@
   <mat-grid-tile colspan="2" role="listitem">4</mat-grid-tile>
 </mat-grid-list> -->
 
-<div class="detalhe_main" fxLayout="column wrap" fxLayoutAlign="start stretch" fxLayoutGap="10px">
+<div *ngIf="!loading" class="detalhe_main" fxLayout="column wrap" fxLayoutAlign="start stretch" fxLayoutGap="10px">
 
   <div class="detalhe_voltar" fxFlex="grow" fxLayoutAlign="start stretch">
     <button class="btn_detalhe_voltar" routerLink="['pokemon']">
@@ -42,44 +42,44 @@
       <mat-card class="detalhe_card" fxLayout="row" fxLayoutAlign="space-between center">
         <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="10px">
           <div>
-            <h2 class="text-uppercase detalhe_card_id">#{{ detalheId }}</h2>
+            <h2 class="text-uppercase detalhe_card_id">#{{ pokemonDetalhe?.id }}</h2>
           </div>
           <div>
-            <h1 class="text-uppercase">{{ detalheName }}</h1>
-            <h2 class="text-uppercase">{{ detalheNameJp }}</h2>
+            <h1 class="text-uppercase">{{ pokemonDetalhe?.nome }}</h1>
+            <h2 class="text-uppercase">{{ pokemonDetalhe?.nomeJP }}</h2>
           </div>
         </div>
-        <img class="detalhe_icon_tipo" src="../../../../../assets/types/{{ detalheTipo }}.png" alt="" />
+        <img class="detalhe_icon_tipo" src="../../../../../assets/types/{{ pokemonDetalhe?.tipo }}.png" alt="" />
       </mat-card>
 
       <mat-card class="detalhe_card" fxLayout="row" fxLayoutAlign="center center">
-        <img mat-card-image class="card_image_detalhe" [src]="detalheImage" />
+        <img mat-card-image class="card_image_detalhe" [src]="pokemonDetalhe?.images" />
       </mat-card>
 
       <mat-card class="detalhe_card" fxLayout="row wrap" fxLayoutAlign="center center">
         <div class="detalhe_hp detalhe_habilidades">
           <span class="detalhe_habilidades_title">HP</span>
-          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[0].base_stat }}</span>
+          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.hp }}</span>
         </div>
         <div class="detalhe_atk detalhe_habilidades">
           <span class="detalhe_habilidades_title">Atk</span>
-          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[1].base_stat }}</span>
+          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.attack }}</span>
         </div>
         <div class="detalhe_def detalhe_habilidades">
           <span class="detalhe_habilidades_title">Def</span>
-          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[2].base_stat }}</span>
+          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.defense }}</span>
         </div>
         <div class="detalhe_spA detalhe_habilidades">
           <span class="detalhe_habilidades_title">SpA</span>
-          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[3].base_stat }}</span>
+          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.specialAttack }}</span>
         </div>
         <div class="detalhe_spD detalhe_habilidades">
           <span class="detalhe_habilidades_title">SpD</span>
-          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[4].base_stat }}</span>
+          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.specialDefense }}</span>
         </div>
         <div class="detalhe_sPD detalhe_habilidades">
           <span class="detalhe_habilidades_title">SPD</span>
-          <span class="detalhe_habilidades_result">{{ detalhePokemon.detalhe?.stats[5].base_stat }}</span>
+          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.speed }}</span>
         </div>
       </mat-card>
 
@@ -96,11 +96,11 @@
     <div class="detalhe_conteudo_item" fxFlex="50" fxLayout="column" fxLayoutGap="10px">
 
       <mat-card class="detalhe_card">
-        <h3>Geração: <span>Geração {{ detalheGeracao }}</span></h3>
-        <h3>Cor: <span class="detalhe_color" [style.background-color]="detalheCor ?? '#555'"></span>
+        <h3>Geração: <span>Geração {{ pokemonDetalhe?.geracao }}</span></h3>
+        <h3>Cor: <span class="detalhe_color" [style.background-color]="detalhePokemon.cor ?? '#555'"></span>
         </h3>
-        <h3>Tipo: <span>{{ detalheTipo }}</span></h3>
-        <h3>Habitat: <span>{{ detalheHabitat }}</span></h3>
+        <h3>Tipo: <span>{{ pokemonDetalhe?.tipo }}</span></h3>
+        <h3>Habitat: <span>{{ pokemonDetalhe?.habitat }}</span></h3>
         <h3>Taxa de Captura: </h3>
         <progressbar [max]="255" [value]="detalhePokemon.especie?.capture_rate" [type]="type" [striped]="true"
           [animate]="true"><i>{{ detalhePokemon.especie?.capture_rate }} / 255</i>
@@ -110,23 +110,26 @@
       </mat-card>
 
       <mat-card class="detalhe_card">
-        <h3>Largura: <span>{{ detalheLargura }} cm</span></h3>
-        <h3>Altura: <span>{{ detalheAltura }} cm</span></h3>
+        <h3>Largura: <span>{{ pokemonDetalhe?.largura }} cm</span></h3>
+        <h3>Altura: <span>{{ pokemonDetalhe?.altura }} cm</span></h3>
       </mat-card>
 
       <mat-card class="detalhe_card">
-        <h3>Habilidade: <span *ngFor="let habilidade of detalheHabilidade">{{ habilidade.ability?.name
+        <h3>Habilidade: <span *ngFor="let habilidade of pokemonDetalhe?.habilidades">{{ habilidade.ability?.name
             }} | </span></h3>
         <h3 *ngIf="detalhePokemon.detalhe?.held_items.leght > 0">Itens que Ajuda na Evolucao: <span
             *ngFor="let habilidade of detalhePokemon.detalhe?.held_items">{{
             habilidade.item.name
             }} | </span></h3>
-        <h3>Experiência de Base: <span>{{ detalheExperiencia }}</span></h3>
+        <h3>Experiência de Base: <span>{{ pokemonDetalhe?.experiencia }}</span></h3>
       </mat-card>
     </div>
   </div>
 </div>
 
+<div fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <mat-spinner *ngIf="loading" mode="indeterminate"></mat-spinner>
+</div>
 
 <!-- <button mat-raised-button aria-label="Botão que volta para lista pokemon" routerLink="['pokemon']">Voltar</button>
 

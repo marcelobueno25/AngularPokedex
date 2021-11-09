@@ -53,5 +53,8 @@ body:not(.tema-escuro) {
         }
       }
     }
+    mat-paginator {
+      color: var(--color-dark);
+    }
   }
 }

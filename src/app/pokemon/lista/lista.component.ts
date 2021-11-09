@@ -10,10 +10,10 @@ import { PokemonService } from 'src/app/shared/services/pokemon.service';
 })
 export class ListaComponent implements OnInit {
   loading: boolean = true;
-
   pokemonlimite: number = 20;
   paginatorTotal: number = 500;
-  paginatorItem: number = 0;
+  paginatorItem: number = Number(localStorage.getItem('page')) ?? 0;
+  paginatorAtual: number = this.paginatorItem * this.pokemonlimite;
 
   pokemons: any[] = [];
 
@@ -25,7 +25,7 @@ export class ListaComponent implements OnInit {
 
   listar() {
     this.pokemonService
-      .getListaAll(this.paginatorItem, this.pokemonlimite)
+      .getListaAll(this.paginatorAtual, this.pokemonlimite)
       .subscribe(
         (response: any) => {
           // this.paginatorTotal = response.count;
@@ -43,8 +43,10 @@ export class ListaComponent implements OnInit {
   }
 
   pageEvents(event: any) {
-    this.paginatorItem = event.pageIndex * event.pageSize;
-    console.log(' this.event ', event);
+    this.paginatorItem = event.pageIndex;
+    this.paginatorAtual = this.paginatorItem * this.pokemonlimite;
+    localStorage.setItem('page', this.paginatorItem.toString());
+    console.log(' this.event ', event, this.paginatorItem);
     return event;
   }
 }

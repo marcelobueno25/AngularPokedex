@@ -14,7 +14,7 @@
   </div>
   <mat-spinner *ngIf="loading" mode="indeterminate"></mat-spinner>
 
-  <mat-paginator [length]="paginatorTotal" [pageSize]="pokemonlimite" [pageIndex]="0"
+  <mat-paginator [length]="paginatorTotal" [pageSize]="pokemonlimite" [pageIndex]="paginatorItem"
     (page)="pageEvents($event); pokemons = []; listar()" aria-label="Select page">
   </mat-paginator>
 </div>
