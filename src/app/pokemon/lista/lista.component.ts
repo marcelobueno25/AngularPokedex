@@ -30,7 +30,7 @@ export class ListaComponent implements OnInit {
           this.pokemons[response.index] = response.conteudo;
         },
         (err) => console.error('Erro: ', err),
-        () => console.error('Concluido')
+        () => console.log('Concluido')
       );
   }
 
@@ -38,7 +38,6 @@ export class ListaComponent implements OnInit {
     this.paginatorItem = event.pageIndex;
     this.paginatorAtual = this.paginatorItem * this.pokemonlimite;
     localStorage.setItem('page', this.paginatorItem.toString());
-    console.log(' this.event ', event, this.paginatorItem);
     return event;
   }
 }

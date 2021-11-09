@@ -114,7 +114,7 @@ export class DetalheComponent implements OnInit {
 
   atualizarDados(pokemon: any) {
     this.detalhePokemon = pokemon;
-    console.log('Pokemon: ', this.detalhePokemon);
+    // console.log('Pokemon: ', this.detalhePokemon);
     this.pokemonDetalhe = {
       id: pokemon?.detalhe?.id,
       nome: pokemon?.detalhe?.name,
