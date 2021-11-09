@@ -36,7 +36,6 @@ export class PokemonService {
         );
         return { conteudo: res, index: i };
       }),
-      delay(500),
       retry()
     );
   }
