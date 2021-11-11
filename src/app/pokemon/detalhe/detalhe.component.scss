@@ -122,8 +122,39 @@
         width: 20px;
         border-radius: 20px;
         margin-right: 10px;
-        border: 1px solid #888;
-        width: 50px;
+        // border: 1px solid #888;
+        width: 20px;
+
+        &.detalhe_color_red {
+          background-color: #FF9D55;
+        }
+        &.detalhe_color_blue {
+          background-color: #5090D6;
+        }
+        &.detalhe_color_yellow {
+          background-color: #F4D23C;
+        }
+        &.detalhe_color_green {
+          background-color: #91C12F;
+        }
+        &.detalhe_color_black {
+          background-color: #444;
+        }
+        &.detalhe_color_brown {
+          background-color: #D97845;
+        }
+        &.detalhe_color_purple {
+          background-color: #B567CE;
+        }
+        &.detalhe_color_gray {
+          background-color: #999;
+        }
+        &.detalhe_color_white {
+          background-color: #eee
+        }
+        &.detalhe_color_pink {
+          background-color: #ffb8c4;
+        }
       }
       .card_image_detalhe {
         width: 350px;
