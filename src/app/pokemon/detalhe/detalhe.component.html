@@ -39,49 +39,56 @@
 
     <div class="detalhe_conteudo_item" fxFlex="50" fxLayout="column" fxLayoutGap="10px">
 
-      <mat-card class="detalhe_card" fxLayout="row" fxLayoutAlign="space-between center">
-        <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="10px">
-          <div>
-            <h2 class="text-uppercase detalhe_card_id">#{{ pokemonDetalhe?.id }}</h2>
+      <app-card>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="10px">
+            <div>
+              <h2 class="text-uppercase detalhe_card_id">#{{ pokemonDetalhe?.id }}</h2>
+            </div>
+            <div>
+              <h1 class="text-uppercase">{{ pokemonDetalhe?.nome }}</h1>
+              <h2 class="text-uppercase">{{ pokemonDetalhe?.nomeJP }}</h2>
+            </div>
           </div>
           <div>
-            <h1 class="text-uppercase">{{ pokemonDetalhe?.nome }}</h1>
-            <h2 class="text-uppercase">{{ pokemonDetalhe?.nomeJP }}</h2>
+            <img *ngFor="let tipo of pokemonDetalhe?.tipo" class="detalhe_icon_tipo"
+              src="../../../../../assets/types/{{ tipo.type.name }}.png" alt="" />
           </div>
         </div>
-        <img class="detalhe_icon_tipo" src="../../../../../assets/types/{{ pokemonDetalhe?.tipo }}.png" alt="" />
-      </mat-card>
+      </app-card>
 
       <mat-card class="detalhe_card" fxLayout="row" fxLayoutAlign="center center">
         <img mat-card-image class="card_image_detalhe" [src]="pokemonDetalhe?.images" />
       </mat-card>
 
-      <mat-card class="detalhe_card" fxLayout="row wrap" fxLayoutAlign="center center">
-        <div class="detalhe_hp detalhe_habilidades">
-          <span class="detalhe_habilidades_title">HP</span>
-          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.hp }}</span>
+      <app-card>
+        <div fxLayout="row wrap" fxLayoutAlign="center center">
+          <div class="detalhe_hp detalhe_habilidades">
+            <span class="detalhe_habilidades_title">HP</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.hp }}</span>
+          </div>
+          <div class="detalhe_atk detalhe_habilidades">
+            <span class="detalhe_habilidades_title">Atk</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.attack }}</span>
+          </div>
+          <div class="detalhe_def detalhe_habilidades">
+            <span class="detalhe_habilidades_title">Def</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.defense }}</span>
+          </div>
+          <div class="detalhe_spA detalhe_habilidades">
+            <span class="detalhe_habilidades_title">SpA</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.specialAttack }}</span>
+          </div>
+          <div class="detalhe_spD detalhe_habilidades">
+            <span class="detalhe_habilidades_title">SpD</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.specialDefense }}</span>
+          </div>
+          <div class="detalhe_sPD detalhe_habilidades">
+            <span class="detalhe_habilidades_title">SPD</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.speed }}</span>
+          </div>
         </div>
-        <div class="detalhe_atk detalhe_habilidades">
-          <span class="detalhe_habilidades_title">Atk</span>
-          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.attack }}</span>
-        </div>
-        <div class="detalhe_def detalhe_habilidades">
-          <span class="detalhe_habilidades_title">Def</span>
-          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.defense }}</span>
-        </div>
-        <div class="detalhe_spA detalhe_habilidades">
-          <span class="detalhe_habilidades_title">SpA</span>
-          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.specialAttack }}</span>
-        </div>
-        <div class="detalhe_spD detalhe_habilidades">
-          <span class="detalhe_habilidades_title">SpD</span>
-          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.specialDefense }}</span>
-        </div>
-        <div class="detalhe_sPD detalhe_habilidades">
-          <span class="detalhe_habilidades_title">SPD</span>
-          <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.speed }}</span>
-        </div>
-      </mat-card>
+      </app-card>
 
       <mat-card class="detalhe_card">
         <div style="display: block">
@@ -95,34 +102,111 @@
 
     <div class="detalhe_conteudo_item" fxFlex="50" fxLayout="column" fxLayoutGap="10px">
 
-      <mat-card class="detalhe_card">
-        <h3>Geração: <span>Geração {{ pokemonDetalhe?.geracao }}</span></h3>
-        <h3>Cor: <span class="detalhe_color" [style.background-color]="pokemonDetalhe?.cor ?? '#555'"></span>
-        </h3>
-        <h3>Tipo: <span>{{ pokemonDetalhe?.tipo }}</span></h3>
-        <h3>Habitat: <span>{{ pokemonDetalhe?.habitat }}</span></h3>
-        <h3>Taxa de Captura: </h3>
-        <progressbar [max]="255" [value]="detalhePokemon.especie?.capture_rate" [type]="type" [striped]="true"
-          [animate]="true"><i>{{ detalhePokemon.especie?.capture_rate }} / 255</i>
-        </progressbar>
-        <p class="detalhe_text_desc">A taxa de captura básica; até 255. <br /> Quanto maior o número, mais fácil será a
-          captura.</p>
-      </mat-card>
+      <app-card>
+        <app-card-titulo>Informações principais</app-card-titulo>
+        <div class="detalhe_card_item">
+          <h2>Geração</h2>
+          <p>Geração {{ pokemonDetalhe?.geracao }}</p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Tipo(s)</h2>
+          <div class="detalhe_card_tipos"><span *ngFor="let tipo of pokemonDetalhe?.tipo"
+              class="detalhe_card_tipo_{{ tipo.type.name }}">{{
+              tipo.type.name |
+              tipos }}</span>
+          </div>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Habitat</h2>
+          <p>{{ pokemonDetalhe?.habitat | habitat }}</p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Altura</h2>
+          <p>{{ pokemonDetalhe?.altura }} m</p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Peso</h2>
+          <p>{{ pokemonDetalhe?.Peso }} kg</p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Cor do Pokedex</h2>
+          <p><span class="detalhe_color" [style.background-color]="pokemonDetalhe?.cor ?? '#555'"></span></p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Taxa de Captura</h2>
+          <progressbar class="detalhe_card_progressbar" [max]="255" [value]="detalhePokemon.especie?.capture_rate"
+            [type]="type" [striped]="true" [animate]="true">
+            <i>{{ detalhePokemon.especie?.capture_rate }} / 255</i>
+          </progressbar>
+          <p class="detalhe_card_desc">A taxa de captura básica; até 255. <br /> Quanto maior o número, mais fácil será
+            a
+            captura.</p>
+        </div>
+      </app-card>
 
-      <mat-card class="detalhe_card">
-        <h3>Largura: <span>{{ pokemonDetalhe?.largura }} cm</span></h3>
-        <h3>Altura: <span>{{ pokemonDetalhe?.altura }} cm</span></h3>
-      </mat-card>
+      <app-card>
+        <app-card-titulo>Informações complementares</app-card-titulo>
+        <div class="detalhe_card_item">
+          <h2>Experiência</h2>
+          <p>{{ pokemonDetalhe?.experiencia }}</p>
+          <p class="detalhe_card_desc">A experiência básica obtida ao derrotar este Pokémon.</p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Ganho de Exp.</h2>
+          <p>---Clorofila</p>
+        </div>
+      </app-card>
 
-      <mat-card class="detalhe_card">
-        <h3>Habilidade: <span *ngFor="let habilidade of pokemonDetalhe?.habilidades">{{ habilidade.ability?.name
-            }} | </span></h3>
-        <h3 *ngIf="detalhePokemon.detalhe?.held_items.leght > 0">Itens que Ajuda na Evolucao: <span
-            *ngFor="let habilidade of detalhePokemon.detalhe?.held_items">{{
-            habilidade.item.name
-            }} | </span></h3>
-        <h3>Experiência de Base: <span>{{ pokemonDetalhe?.experiencia }}</span></h3>
-      </mat-card>
+      <app-card>
+        <app-card-titulo>Habilidade(s)</app-card-titulo>
+        <div class="detalhe_card_item">
+          <h2>REGULAR(ES)</h2>
+          <p *ngFor="let habilidade of pokemonDetalhe?.habilidades">{{ habilidade.ability?.name
+            }} </p>
+          <h2>OCULTA(ES)</h2>
+        </div>
+      </app-card>
+
+      <app-card>
+        <app-card-titulo>Atributos</app-card-titulo>
+        <div class="detalhe_card_item">
+          <h2>HP</h2>
+          <p>{{ pokemonDetalhe?.experiencia }}</p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Total</h2>
+          <p>{{ pokemonDetalhe?.experiencia }}</p>
+        </div>
+      </app-card>
+
+      <app-card>
+        <app-card-titulo>Evolucoes</app-card-titulo>
+        <div class="detalhe_card_item">
+          <h2>HP</h2>
+          <p>{{ pokemonDetalhe?.experiencia }}</p>
+        </div>
+      </app-card>
+
+      <app-card>
+        <app-card-titulo>Efetividade</app-card-titulo>
+        <div class="detalhe_card_item">
+          <h2>Super efetivo</h2>
+          <p>25</p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Dano normal</h2>
+          <p>318</p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Pouco efetivo</h2>
+          <p>318</p>
+        </div>
+        <div class="detalhe_card_item">
+          <h2>Sem dano</h2>
+          <p>318</p>
+        </div>
+      </app-card>
+
     </div>
   </div>
 </div>

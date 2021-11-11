@@ -1,3 +1,4 @@
+import { PipesModule } from './shared/pipes/pipes.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ShellModule } from './shell/shell.module';
 import { PokemonModule } from './pokemon/pokemon.module';
@@ -24,6 +25,7 @@ import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
     ShellModule,
     FlexLayoutModule,
     ChartsModule,
+    PipesModule,
     ProgressbarModule.forRoot(),
   ],
   providers: [],

@@ -7,7 +7,7 @@ import { Observable, forkJoin } from 'rxjs';
   providedIn: 'root',
 })
 export class PokemonService {
-  private URLBASE: string = 'https://pokeapi.co/api/v2/';
+  private URLBASE: string = 'https://pokeapi.co/api/v2';
 
   constructor(private http: HttpClient) {}
 
@@ -17,7 +17,7 @@ export class PokemonService {
 
   getListaPokemon(page: number = 0, limit: number = 20): Observable<any> {
     return this.getAPI(
-      `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${page}`
+      `${this.URLBASE}/pokemon/?limit=${limit}&offset=${page}`
     ).pipe(
       map((response: any) => {
         return response;
@@ -27,7 +27,7 @@ export class PokemonService {
 
   getListaAll(page: number = 0, limit: number = 20): Observable<any> {
     return this.getAPI(
-      `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${page}`
+      `${this.URLBASE}/pokemon/?limit=${limit}&offset=${page}`
     ).pipe(
       mergeMap((response) => response.results),
       map((res: any, i: any) => {
@@ -45,21 +45,19 @@ export class PokemonService {
   }
 
   getDetalhePokemon(id: string): Observable<any> {
-    return this.getAPI(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    return this.getAPI(`${this.URLBASE}/pokemon/${id}`);
   }
 
   getEspeciePokemon(id: string): Observable<any> {
-    return this.getAPI(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    return this.getAPI(`${this.URLBASE}/pokemon-species/${id}`);
   }
   getTipoPokemon(id: string): Observable<any> {
-    return this.getAPI(`https://pokeapi.co/api/v2/type/${id}`);
+    return this.getAPI(`${this.URLBASE}/type/${id}`);
   }
 
   getDetalhesAll(id: string): Observable<any> {
-    let detalhe = this.getAPI(`https://pokeapi.co/api/v2/pokemon/${id}`);
-    let especie = this.getAPI(
-      `https://pokeapi.co/api/v2/pokemon-species/${id}`
-    );
+    let detalhe = this.getAPI(`${this.URLBASE}/pokemon/${id}`);
+    let especie = this.getAPI(`${this.URLBASE}/pokemon-species/${id}`);
     return forkJoin({ detalhe, especie });
   }
 }

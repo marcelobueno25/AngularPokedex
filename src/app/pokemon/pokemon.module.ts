@@ -1,6 +1,6 @@
+import { PipesModule } from './../shared/pipes/pipes.module';
 import { ChartsModule } from 'ng2-charts';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ComponentsModule } from './../shared/components/components.module';
 import { ListaComponent } from './lista/lista.component';
 import { PokemonComponent } from './pokemon.component';
 import { NgModule } from '@angular/core';
@@ -19,13 +19,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { DataService } from '../shared/services/data.service';
+import { CardModule } from '../shared/components/cards/card.module';
 
 @NgModule({
   declarations: [PokemonComponent, ListaComponent, DetalheComponent],
   imports: [
     CommonModule,
     PokemonRoutingModule,
-    ComponentsModule,
     MatGridListModule,
     MatButtonModule,
     MatProgressSpinnerModule,
@@ -38,6 +38,8 @@ import { DataService } from '../shared/services/data.service';
     MatIconModule,
     ChartsModule,
     ProgressbarModule,
+    PipesModule,
+    CardModule,
   ],
   providers: [DataService],
   exports: [PokemonComponent],

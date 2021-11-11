@@ -1,0 +1,110 @@
+@import '.../../../../../../themes/colors.scss';
+
+
+:host ::ng-deep{
+  .detalhe_card {
+    transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+
+    h1, h2, span, p {
+      margin: 0;
+    }
+
+    .detalhe_card_item {
+      margin: 10px 0;
+
+      .detalhe_card_desc {
+        font-size: 12px;
+        text-align: left;
+      }
+
+      .detalhe_card_progressbar {
+        margin: 5px 0;
+      }
+
+      .detalhe_card_tipos {
+        margin-top: 5px;
+
+        span {
+          text-align: center;
+          display: inline-block;
+          padding: 3px 10px;
+          margin-right: 5px;
+          border-radius: 10px;
+          min-width: 80px;
+        }
+
+        .detalhe_card_tipo_normal {
+          background-color: #919AA2;
+        }
+
+        .detalhe_card_tipo_fighting {
+          background-color: #CE416B;
+        }
+
+        .detalhe_card_tipo_flying {
+          background-color: #89AAE3;
+        }
+        .detalhe_card_tipo_poison {
+          background-color: #B567CE;
+        }
+
+        .detalhe_card_tipo_ground {
+          background-color: #D97845;
+        }
+
+        .detalhe_card_tipo_rock {
+          background-color: #C5B78C;
+        }
+        .detalhe_card_tipo_bug {
+          background-color: #91C12F;
+        }
+
+        .detalhe_card_tipo_ghost {
+          background-color: #5269AD;
+        }
+
+        .detalhe_card_tipo_steel {
+          background-color: #5A8EA2;
+        }
+        .detalhe_card_tipo_fire {
+          background-color: #FF9D55;
+        }
+
+        .detalhe_card_tipo_water {
+          background-color: #5090D6;
+        }
+
+        .detalhe_card_tipo_grass {
+          background-color: #63BC5A;
+        }
+        .detalhe_card_tipo_electric {
+          background-color: #F4D23C;
+        }
+
+        .detalhe_card_tipo_psychic {
+          background-color: #FA7179;
+        }
+
+        .detalhe_card_tipo_ice {
+          background-color: #73CEC0;
+        }
+        .detalhe_card_tipo_dragon {
+          background-color: #0B6DC3;
+        }
+
+        .detalhe_card_tipo_dark {
+          background-color: #5A5465;
+        }
+
+        .detalhe_card_tipo_fairy {
+          background-color: #EC8FE6;
+        }
+      }
+    }
+  }
+}

@@ -16,11 +16,11 @@
       }
     }
   }
+
+
   .detalhe_conteudo {
     .detalhe_conteudo_item {
-      h1, h2 {
-        margin: 0;
-      }
+
 
       .detalhe_card_id {
         display: flex;
@@ -35,6 +35,7 @@
       .detalhe_icon_tipo {
         width: 40px;
         height: 40px;
+        margin: 0 5px;
       }
 
       .detalhe_habilidades {

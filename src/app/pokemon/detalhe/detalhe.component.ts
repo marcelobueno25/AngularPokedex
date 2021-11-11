@@ -112,9 +112,19 @@ export class DetalheComponent implements OnInit {
     );
   }
 
+  insertDot(a: any) {
+    console.log(a);
+    a = a.toString(); // Transforma em String
+    var beforeDot = a.substring(0, a.length - 1); // Captura do primeiro ao penúltimo caractere
+    var afterDot = a.substring(a.length - 1, a.length); // Captura o penúltimo ao último caractere
+    console.log(beforeDot, afterDot, a);
+    a = beforeDot + '.' + afterDot;
+    return a; // retorna um NÚMERO com com o ponto inserido
+  }
+
   atualizarDados(pokemon: any) {
     this.detalhePokemon = pokemon;
-    // console.log('Pokemon: ', this.detalhePokemon);
+    console.log('Pokemon: ', this.detalhePokemon);
     this.pokemonDetalhe = {
       id: pokemon?.detalhe?.id,
       nome: pokemon?.detalhe?.name,
@@ -122,9 +132,9 @@ export class DetalheComponent implements OnInit {
       images: pokemon?.detalhe?.sprites?.front_default,
       geracao: pokemon?.especie?.generation.url.split('/')[6],
       cor: pokemon?.especie?.color.name,
-      tipo: pokemon?.detalhe?.types[0].type.name,
+      tipo: pokemon?.detalhe?.types,
       habitat: pokemon?.especie?.habitat?.name,
-      largura: pokemon?.detalhe?.weight,
+      Peso: this.insertDot(pokemon?.detalhe?.weight),
       altura: pokemon?.detalhe?.height,
       habilidades: pokemon?.detalhe?.abilities,
       experiencia: pokemon?.detalhe?.base_experience,
