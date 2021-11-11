@@ -21,7 +21,6 @@
   .detalhe_conteudo {
     .detalhe_conteudo_item {
 
-
       .detalhe_card_id {
         display: flex;
         justify-content: center;
@@ -119,11 +118,12 @@
       }
       .detalhe_color {
         display: inline-block;
-        height: 11px;
-        width: 41px;
-        border-radius: 11px;
+        height: 20px;
+        width: 20px;
+        border-radius: 20px;
         margin-right: 10px;
-        border: 1px solid #333;
+        border: 1px solid #888;
+        width: 50px;
       }
       .card_image_detalhe {
         width: 350px;
