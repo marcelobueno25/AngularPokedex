@@ -1,31 +1,3 @@
-<!-- <h1>Detalhe do Pokemon</h1>
-
-<a (click)="getParametro()">Ver Detalhe</a>
-
-<a routerLink="['pokemon']">Voltar</a>
-
-<p>{{ detalhePokemon.id }}</p>
-<p>{{ detalhePokemon.name }}</p>
-
-<img src="{{ detalhePokemon.sprites.front_default || '' }}" alt="pokemon" />
- -->
-
-<!-- <mat-grid-list cols="4" rowHeight="1:1" gutterSize="10px" role="list">
-
-  <mat-grid-tile colspan="4" role="listitem">
-    <mat-grid-tile-header>
-      <p>#{{ detalhePokemon.detalhe?.id }}</p>
-      <p>-{{ detalhePokemon.detalhe?.name }}</p>
-    </mat-grid-tile-header>
-    <img src="{{ detalhePokemon.detalhe?.sprites?.front_default || '' }}" alt="pokemon" />
-    <mat-grid-tile-footer>
-      <button mat-raised-button aria-label="Botão que volta para lista pokemon" routerLink="['pokemon']">Voltar</button>
-    </mat-grid-tile-footer>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="2" role="listitem">3</mat-grid-tile>
-  <mat-grid-tile colspan="2" role="listitem">4</mat-grid-tile>
-</mat-grid-list> -->
-
 <div *ngIf="!loading" class="detalhe_main" fxLayout="column wrap" fxLayoutAlign="start stretch" fxLayoutGap="10px">
 
   <div class="detalhe_voltar" fxFlex="grow" fxLayoutAlign="start stretch">
@@ -57,9 +29,11 @@
         </div>
       </app-card>
 
-      <mat-card class="detalhe_card" fxLayout="row" fxLayoutAlign="center center">
-        <img mat-card-image class="card_image_detalhe" [src]="pokemonDetalhe?.images" />
-      </mat-card>
+      <app-card>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <img mat-card-image class="card_image_detalhe" [src]="pokemonDetalhe?.images" />
+        </div>
+      </app-card>
 
       <app-card>
         <div fxLayout="row wrap" fxLayoutAlign="center center">
@@ -126,7 +100,7 @@
         </div>
         <div class="detalhe_card_item">
           <h2>Peso</h2>
-          <p>{{ pokemonDetalhe?.Peso }} kg</p>
+          <p>{{ pokemonDetalhe?.Peso | formatpeso }} kg</p>
         </div>
         <div class="detalhe_card_item">
           <h2>Cor do Pokedex</h2>
@@ -134,9 +108,9 @@
         </div>
         <div class="detalhe_card_item">
           <h2>Taxa de Captura</h2>
-          <progressbar class="detalhe_card_progressbar" [max]="255" [value]="detalhePokemon.especie?.capture_rate"
-            [type]="type" [striped]="true" [animate]="true">
-            <i>{{ detalhePokemon.especie?.capture_rate }} / 255</i>
+          <progressbar class="detalhe_card_progressbar" [max]="255" [value]="pokemonDetalhe?.taxaCaptura" [type]="type"
+            [striped]="true" [animate]="true">
+            <i>{{ pokemonDetalhe?.taxaCaptura }} / 255</i>
           </progressbar>
           <p class="detalhe_card_desc">A taxa de captura básica; até 255. <br /> Quanto maior o número, mais fácil será
             a
@@ -165,26 +139,6 @@
         </div>
       </app-card>
 
-      <!-- <app-card>
-        <app-card-titulo>Efetividade</app-card-titulo>
-        <div class="detalhe_card_item">
-          <h2>Super efetivo</h2>
-          <p>25</p>
-        </div>
-        <div class="detalhe_card_item">
-          <h2>Dano normal</h2>
-          <p>318</p>
-        </div>
-        <div class="detalhe_card_item">
-          <h2>Pouco efetivo</h2>
-          <p>318</p>
-        </div>
-        <div class="detalhe_card_item">
-          <h2>Sem dano</h2>
-          <p>318</p>
-        </div>
-      </app-card> -->
-
     </div>
   </div>
 </div>
@@ -192,51 +146,3 @@
 <div class="detalhe_loading" fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
   <mat-spinner *ngIf="loading" mode="indeterminate"></mat-spinner>
 </div>
-
-<!-- <button mat-raised-button aria-label="Botão que volta para lista pokemon" routerLink="['pokemon']">Voltar</button>
-
-
-<div class="detalhe_main">
-
-  <div fxLayoutGap="20px" fxLayout="row" fxLayoutAlign="start center">
-    <img mat-card-image class="detalhe_tipo_icon"
-      src="../../../assets/types/{{ detalhePokemon.detalhe?.types[0].type.name }}.png" />
-    <div>
-      <h2 class="detalhe_id">#{{ detalhePokemon.detalhe?.id }}</h2>
-      <h3 class="detalhe_name">{{ detalhePokemon.detalhe?.name }}</h3>
-    </div>
-  </div>
-
-  <div fxLayoutGap="20px" fxLayout="column" fxLayoutAlign="start start">
-    <p>Largura: {{ detalhePokemon.detalhe?.weight }}</p>
-    <mat-divider [vertical]="true"></mat-divider>
-
-
-    <p>Altura: {{ detalhePokemon.detalhe?.height }}</p>
-    <p>Habilidade: <span *ngFor="let habilidade of detalhePokemon.detalhe?.abilities">{{ habilidade.ability.name
-        }} | </span>
-    </p>
-    <div *ngFor="let stats of detalhePokemon.detalhe?.stats">
-      <p>{{ stats.stat.name }}: <span>{{ stats.base_stat }}</span></p>
-      <mat-slider disabled min="1" max="100" step="1" [value]="stats.base_stat"></mat-slider>
-    </div>
-  </div>
-</div> -->
-
-
-<!-- <mat-list>
-  <h3 mat-subheader>TAMANHO</h3>
-  <mat-list-item>
-    <div mat-line>Altura: </div>
-    <div mat-line> {{ detalhePokemon.detalhe?.height }} </div>
-  </mat-list-item>
-  <mat-list-item>
-    <div mat-line>Largura: </div>
-    <div mat-line> {{ detalhePokemon.detalhe?.weight }} </div>
-  </mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item>
-
-
-  </mat-list-item>
-</mat-list> -->

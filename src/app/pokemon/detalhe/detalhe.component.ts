@@ -11,27 +11,8 @@ import { Label, Color } from 'ng2-charts';
   styleUrls: ['./detalhe.component.scss'],
 })
 export class DetalheComponent implements OnInit {
-  pokemonID: string = '';
-  detalhePokemon: any = {};
-  loading: boolean = true;
-
-  pokemonDetalhe: any = {
-    id: '',
-    nome: '',
-    nomeJP: '',
-    images: '',
-    geracao: '',
-    cor: '',
-    tipo: '',
-    habitat: '',
-    largura: '',
-    altura: '',
-    habilidades: '',
-    experiencia: '',
-    estatisticas: {},
-  };
-
-  public radarChartData: ChartDataSets[] = [{ data: [], label: 'Habilidades' }];
+  // Configutacao do CharJs
+  public radarChartData: ChartDataSets[] = [{ data: [] }];
   public radarChartType: ChartType = 'radar';
   public radarChartLabels: Label[] = [
     'hp',
@@ -63,8 +44,29 @@ export class DetalheComponent implements OnInit {
       },
     },
   };
-
   type: 'danger' | 'warning' | 'info' | 'success' = 'info';
+
+  loading: boolean = true;
+
+  pokemonID: string = '';
+  detalhePokemon: any = {};
+
+  pokemonDetalhe: any = {
+    id: '',
+    nome: '',
+    nomeJP: '',
+    images: '',
+    geracao: '',
+    cor: '',
+    tipo: '',
+    habitat: '',
+    largura: '',
+    altura: '',
+    habilidades: '',
+    experiencia: '',
+    taxaCaptura: '',
+    estatisticas: {},
+  };
 
   constructor(
     private router: ActivatedRoute,
@@ -77,10 +79,9 @@ export class DetalheComponent implements OnInit {
     this.detalhe();
   }
 
-  random(): void {
+  colorRadar(): void {
     let value = this.detalhePokemon.especie?.capture_rate;
     let type: 'danger' | 'warning' | 'info' | 'success';
-
     if (value < 100) {
       type = 'danger';
     } else if (value < 150) {
@@ -90,7 +91,6 @@ export class DetalheComponent implements OnInit {
     } else {
       type = 'success';
     }
-
     this.type = type;
   }
 
@@ -105,26 +105,15 @@ export class DetalheComponent implements OnInit {
       },
       (err) => console.error('Erro: ', err),
       () => {
-        this.random();
+        this.colorRadar();
         this.loading = false;
         console.log('Detalhe Concluida');
       }
     );
   }
 
-  insertDot(a: any) {
-    // console.log(a);
-    a = a.toString(); // Transforma em String
-    var beforeDot = a.substring(0, a.length - 1); // Captura do primeiro ao penúltimo caractere
-    var afterDot = a.substring(a.length - 1, a.length); // Captura o penúltimo ao último caractere
-    // console.log(beforeDot, afterDot, a);
-    a = beforeDot + '.' + afterDot;
-    return a; // retorna um NÚMERO com com o ponto inserido
-  }
-
   atualizarDados(pokemon: any) {
     this.detalhePokemon = pokemon;
-    console.log('Pokemon: ', this.detalhePokemon);
     this.pokemonDetalhe = {
       id: pokemon?.detalhe?.id,
       nome: pokemon?.detalhe?.name,
@@ -134,10 +123,11 @@ export class DetalheComponent implements OnInit {
       cor: pokemon?.especie?.color.name,
       tipo: pokemon?.detalhe?.types,
       habitat: pokemon?.especie?.habitat?.name,
-      Peso: this.insertDot(pokemon?.detalhe?.weight),
+      Peso: pokemon?.detalhe?.weight,
       altura: pokemon?.detalhe?.height,
       habilidades: pokemon?.detalhe?.abilities,
       experiencia: pokemon?.detalhe?.base_experience,
+      taxaCaptura: pokemon?.especie?.capture_rate,
       estatisticas: {
         hp: pokemon?.detalhe.stats[0].base_stat,
         attack: pokemon?.detalhe.stats[1].base_stat,
