@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 import { DataService } from '../shared/services/data.service';
 import { CardModule } from '../shared/components/cards/card.module';
+import { ProgressoModule } from '../shared/components/progresso/progresso.module';
 
 @NgModule({
   declarations: [PokemonComponent, ListaComponent, DetalheComponent],
@@ -37,9 +38,9 @@ import { CardModule } from '../shared/components/cards/card.module';
     MatCardModule,
     MatIconModule,
     ChartsModule,
-    ProgressbarModule,
     PipesModule,
     CardModule,
+    ProgressoModule,
   ],
   providers: [DataService],
   exports: [PokemonComponent],

@@ -39,27 +39,27 @@
         <div fxLayout="row wrap" fxLayoutAlign="center center">
           <div class="detalhe_hp detalhe_habilidades">
             <span class="detalhe_habilidades_title">HP</span>
-            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.hp }}</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.atributos.hp }}</span>
           </div>
           <div class="detalhe_atk detalhe_habilidades">
             <span class="detalhe_habilidades_title">Atk</span>
-            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.attack }}</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.atributos.attack }}</span>
           </div>
           <div class="detalhe_def detalhe_habilidades">
             <span class="detalhe_habilidades_title">Def</span>
-            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.defense }}</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.atributos.defense }}</span>
           </div>
           <div class="detalhe_spA detalhe_habilidades">
             <span class="detalhe_habilidades_title">SpA</span>
-            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.specialAttack }}</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.atributos.specialAttack }}</span>
           </div>
           <div class="detalhe_spD detalhe_habilidades">
             <span class="detalhe_habilidades_title">SpD</span>
-            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.specialDefense }}</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.atributos.specialDefense }}</span>
           </div>
           <div class="detalhe_sPD detalhe_habilidades">
             <span class="detalhe_habilidades_title">SPD</span>
-            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.estatisticas.speed }}</span>
+            <span class="detalhe_habilidades_result">{{ pokemonDetalhe?.atributos.speed }}</span>
           </div>
         </div>
       </app-card>
@@ -108,10 +108,11 @@
         </div>
         <div class="detalhe_card_item">
           <h2>Taxa de Captura</h2>
-          <progressbar class="detalhe_card_progressbar" [max]="255" [value]="pokemonDetalhe?.taxaCaptura" [type]="type"
+          <!-- <progressbar class="detalhe_card_progressbar" [max]="255" [value]="pokemonDetalhe?.taxaCaptura" [type]="type"
             [striped]="true" [animate]="true">
             <i>{{ pokemonDetalhe?.taxaCaptura }} / 255</i>
-          </progressbar>
+          </progressbar> -->
+          <app-progresso [total]='255' [progress]='pokemonDetalhe?.taxaCaptura'></app-progresso>
           <p class="detalhe_card_desc">A taxa de captura básica; até 255. <br /> Quanto maior o número, mais fácil será
             a
             captura.</p>
@@ -122,13 +123,15 @@
         <app-card-titulo>Informações complementares</app-card-titulo>
         <div class="detalhe_card_item">
           <h2>Experiência ao Derrotar</h2>
-          <progressbar class="detalhe_card_progressbar" [max]="400" [value]="pokemonDetalhe?.experiencia" [type]="type"
+          <!-- <progressbar class="detalhe_card_progressbar" [max]="400" [value]="pokemonDetalhe?.experiencia" [type]="type"
             [striped]="true" [animate]="true">
             <i>{{ pokemonDetalhe?.experiencia }} / 400</i>
-          </progressbar>
+          </progressbar> -->
+          <app-progresso [total]='400' [progress]='pokemonDetalhe?.experiencia'></app-progresso>
           <p class="detalhe_card_desc">A experiência básica obtida ao derrotar este Pokémon.
           </p>
         </div>
+
       </app-card>
 
       <app-card>

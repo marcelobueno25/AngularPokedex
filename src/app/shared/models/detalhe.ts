@@ -12,5 +12,5 @@ export interface Detalhe {
   habilidades: any;
   experiencia: any;
   taxaCaptura: any;
-  estatisticas: any;
+  atributos: any;
 }

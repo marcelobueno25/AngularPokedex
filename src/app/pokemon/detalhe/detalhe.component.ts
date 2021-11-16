@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Detalhe } from 'src/app/shared/models/detalhe';
 import { PokemonService } from 'src/app/shared/services/pokemon.service';
 import { ChartDataSets, ChartType, RadialChartOptions } from 'chart.js';
-import { Label, Color } from 'ng2-charts';
+import { Label, Color, ThemeService } from 'ng2-charts';
 
 @Component({
   selector: 'app-detalhe',
@@ -15,12 +15,12 @@ export class DetalheComponent implements OnInit {
   public radarChartData: ChartDataSets[] = [{ data: [] }];
   public radarChartType: ChartType = 'radar';
   public radarChartLabels: Label[] = [
-    'hp',
-    'ataque',
-    'defesa',
-    'ataque-especial',
-    'defesa-especial',
-    'rapidez',
+    'HP',
+    'Ataque',
+    'Defesa',
+    'Ataque-Especial',
+    'Defesa-Especial',
+    'Rapidez',
   ];
   public lineChartColors: Color[] = [
     {
@@ -41,13 +41,14 @@ export class DetalheComponent implements OnInit {
         suggestedMax: 200,
         suggestedMin: 0,
         stepSize: 25,
+        fontColor: 'rgba(170,170,170,1)',
       },
+      gridLines: { color: 'rgba(170,170,170,0.5)' },
     },
   };
   type: 'danger' | 'warning' | 'info' | 'success' = 'info';
 
   loading: boolean = true;
-
   pokemonID: string = '';
   detalhePokemon: any = {};
 
@@ -65,7 +66,7 @@ export class DetalheComponent implements OnInit {
     habilidades: '',
     experiencia: '',
     taxaCaptura: '',
-    estatisticas: {},
+    atributos: {},
   };
 
   constructor(
@@ -98,12 +99,13 @@ export class DetalheComponent implements OnInit {
     this.pokemonService.getDetalhesAll(this.pokemonID).subscribe(
       (response) => {
         this.atualizarDados(response);
-        this.detalhePokemon.detalhe?.stats.map((ability: any) => {
-          const valorHabilidade: number = ability.base_stat;
+        response.detalhe?.stats.map((atributo: any) => {
+          console.log('atributo: ', atributo);
+          const valorHabilidade: number = atributo.base_stat;
           this.radarChartData[0].data?.push(valorHabilidade);
         });
       },
-      (err) => console.error('Erro: ', err),
+      (err) => console.error('Ocorreu um Erro na requisição', err),
       () => {
         this.colorRadar();
         this.loading = false;
@@ -128,7 +130,7 @@ export class DetalheComponent implements OnInit {
       habilidades: pokemon?.detalhe?.abilities,
       experiencia: pokemon?.detalhe?.base_experience,
       taxaCaptura: pokemon?.especie?.capture_rate,
-      estatisticas: {
+      atributos: {
         hp: pokemon?.detalhe.stats[0].base_stat,
         attack: pokemon?.detalhe.stats[1].base_stat,
         defense: pokemon?.detalhe.stats[2].base_stat,
