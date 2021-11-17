@@ -1,5 +1,6 @@
 <div class="progress-bar-container">
   <div class="progress-bar {{color}}" [ngStyle]="{'width': progress + '%'}">
-    <span>{{progressoInicial}} / {{total}}</span>
+    <span *ngIf="ativaPorcetangem">{{progress}} %</span>
+    <span *ngIf="!ativaPorcetangem">{{progressoInicial}} / {{total}}</span>
   </div>
 </div>

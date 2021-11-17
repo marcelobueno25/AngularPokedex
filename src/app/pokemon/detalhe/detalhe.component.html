@@ -112,7 +112,8 @@
             [striped]="true" [animate]="true">
             <i>{{ pokemonDetalhe?.taxaCaptura }} / 255</i>
           </progressbar> -->
-          <app-progresso [total]='255' [progress]='pokemonDetalhe?.taxaCaptura'></app-progresso>
+          <app-progresso [total]='255' [ativaPorcetangem]='true' [progress]='pokemonDetalhe?.taxaCaptura'>
+          </app-progresso>
           <p class="detalhe_card_desc">A taxa de captura básica; até 255. <br /> Quanto maior o número, mais fácil será
             a
             captura.</p>
@@ -127,7 +128,8 @@
             [striped]="true" [animate]="true">
             <i>{{ pokemonDetalhe?.experiencia }} / 400</i>
           </progressbar> -->
-          <app-progresso [total]='400' [progress]='pokemonDetalhe?.experiencia'></app-progresso>
+          <app-progresso [total]='400' [ativaPorcetangem]='false' [progress]='pokemonDetalhe?.experiencia'>
+          </app-progresso>
           <p class="detalhe_card_desc">A experiência básica obtida ao derrotar este Pokémon.
           </p>
         </div>

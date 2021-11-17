@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProgressoComponent implements OnInit {
   @Input() progress: number = 0;
   @Input() total: number = 0;
+  @Input() ativaPorcetangem: boolean = true;
   color: string = '';
   progressoInicial: number = 0;
 
@@ -26,6 +27,8 @@ export class ProgressoComponent implements OnInit {
       this.total = 100;
     }
     this.progress = (this.progress / this.total) * 100;
+    this.progress = parseFloat(this.progress.toFixed(1));
+
     if (this.progress < 55) {
       this.color = 'red';
     } else if (this.progress < 75) {
