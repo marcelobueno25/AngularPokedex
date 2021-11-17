@@ -31,27 +31,27 @@ h1, h2, h3, h4, h5, h6, p, a {
 }
 
 h1 {
-  font-size: var(--font-size-42);
+  font-size: var(--font-size-xxl);
 }
 
 h2 {
-  font-size: var(--font-size-32);
+  font-size: var(--font-size-xl);
 }
 
 h3 {
-  font-size: var(--font-size-28);
+  font-size: var(--font-size-l);
 }
 
 h4 {
-  font-size: var(--font-size-24);
+  font-size: var(--font-size-m);
 }
 
 h5 {
-  font-size: var(--font-size-21);
+  font-size: var(--font-size-s);
 }
 
-h5 {
-  font-size: var(--font-size-18);
+h6 {
+  font-size: var(--font-size-xs);
 }
 
 .container {
