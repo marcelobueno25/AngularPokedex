@@ -1,14 +1,17 @@
 @font-face {
   font-family: 'dongle-light';
   src: url(../assets/fonts/Dongle-Light.ttf) format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: 'dongle-regular';
   src: url(../assets/fonts/Dongle-Regular.ttf) format("truetype");
+  font-display: swap;
 }
 @font-face {
   font-family: 'dongle-bold';
   src: url(../assets/fonts/Dongle-Bold.ttf) format("truetype");
+  font-display: swap;
 }
 
 :root {
