@@ -30,6 +30,30 @@ h1, h2, h3, h4, h5, h6, p, a {
   padding: 0;
 }
 
+h1 {
+  font-size: var(--font-size-42);
+}
+
+h2 {
+  font-size: var(--font-size-32);
+}
+
+h3 {
+  font-size: var(--font-size-28);
+}
+
+h4 {
+  font-size: var(--font-size-24);
+}
+
+h5 {
+  font-size: var(--font-size-21);
+}
+
+h5 {
+  font-size: var(--font-size-18);
+}
+
 .container {
   max-width: 1124px;
   margin: 0 auto;
