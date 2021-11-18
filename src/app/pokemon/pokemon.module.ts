@@ -10,7 +10,6 @@ import { PokemonRoutingModule } from './pokemon-routing.module';
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatIconModule } from '@angular/material/icon';
 import { DataService } from '../shared/services/data.service';
 import { CardModule } from '../shared/components/cards/card.module';
 import { ProgressoModule } from '../shared/components/progresso/progresso.module';
@@ -23,7 +22,6 @@ import { ProgressoModule } from '../shared/components/progresso/progresso.module
     MatProgressSpinnerModule,
     MatPaginatorModule,
     FlexLayoutModule,
-    MatIconModule,
     ChartsModule,
     PipesModule,
     CardModule,

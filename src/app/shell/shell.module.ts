@@ -8,7 +8,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [FooterComponent, HeaderComponent, ShellComponent],
@@ -19,7 +18,6 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     FlexLayoutModule,
     MatToolbarModule,
-    MatIconModule,
   ],
 })
 export class ShellModule {}
