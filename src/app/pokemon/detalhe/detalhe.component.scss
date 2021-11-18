@@ -1,13 +1,14 @@
 .detalhe_main {
-  padding: 10px;
+  padding: var(--padding-m);
+
   .detalhe_voltar {
     .btn_detalhe_voltar {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 5px 20px;
-      border-radius: 10px;
-      font-weight: 800;
+      padding: var(--padding-s) var(--padding-xl);
+      border-radius: var(--radius-m);
+      font-weight: var(--font-weight-medium);
       transition: .5s;
       border: none;
 
@@ -16,7 +17,6 @@
       }
     }
   }
-
 
   .detalhe_conteudo {
     .detalhe_conteudo_item {
@@ -27,14 +27,14 @@
         align-items: center;
         height: 60px;
         width: 60px;
-        border-radius: 50%;
-        padding: 10px;
+        border-radius: var(--radius-50);
+        padding: var(--padding-m);
       }
 
       .detalhe_icon_tipo {
         width: 40px;
         height: 40px;
-        margin: 0 5px;
+        margin: 0 var(--padding-s);
       }
 
       .detalhe_habilidades {
@@ -43,12 +43,10 @@
         justify-content: space-around;
         background-color: rgba(0,0,0,.1);
         align-items: center;
-        border-radius: 25px;
-        // max-width: 50px;
-        // width: 100%;
+        border-radius: var(--radius-xl);
         height: 80px;
-        margin: 5px;
-        padding: 2px 5px;
+        margin: var(--margin-s);
+        padding: 2px var(--padding-s);
 
         &.detalhe_hp  {
           .detalhe_habilidades_title {
@@ -90,70 +88,68 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          border-radius: 50%;
+          border-radius: var(--radius-50);
           height: 40px;
           width: 40px;
-          padding: 10px;
-          font-weight: 600;
-          color: #333;
+          padding: var(--padding-m);
+          font-weight: var(--font-weight-medium);
+          color: var(--color-dark);
         }
 
         .detalhe_habilidades_result {
-          font-weight: 600;
+          font-weight: var(--font-weight-medium);
         }
       }
 
       h3 {
-        font-size: 20px;
+        // font-size: 20px;
 
         span {
-          font-size: 17px;
+          // font-size: var(--font-size-s);
           text-transform: capitalize;
         }
       }
       .detalhe_text_desc {
-        margin: 10px 0;
-        font-size: 12px;
+        margin: var(--margin-m) 0;
+        font-size: var(--font-size-xxs);
         text-align: left;
       }
       .detalhe_color {
         display: inline-block;
         height: 20px;
         width: 20px;
-        border-radius: 20px;
-        margin-right: 10px;
-        // border: 1px solid #888;
-        width: 20px;
+        border-radius: var(--radius-50);
+        margin-right: var(--margin-m);
 
         &.detalhe_color_red {
-          background-color: #FF9D55;
+          background-color: var(--color-cp-red);
         }
         &.detalhe_color_blue {
-          background-color: #5090D6;
+          background-color: var(--color-cp-blue);
         }
         &.detalhe_color_yellow {
-          background-color: #F4D23C;
+          background-color: var(--color-cp-yellow-light);
         }
         &.detalhe_color_green {
-          background-color: #91C12F;
+          background-color: var(--color-cp-green-light);
         }
         &.detalhe_color_black {
-          background-color: #5B5466;
+          background-color: var(--color-cp-purple-dark);
         }
         &.detalhe_color_brown {
-          background-color: #D97845;
+          background-color: var(--color-cp-orange);
         }
         &.detalhe_color_purple {
-          background-color: #B567CE;
+          background-color: var(--color-cp-purple-medium);
         }
         &.detalhe_color_gray {
-          background-color: #999;
+          background-color: var(--color-grey-medium);
         }
         &.detalhe_color_white {
-          background-color: #eee
+          background-color: var(--color-grey-light);
         }
         &.detalhe_color_pink {
-          background-color: #ffb8c4;
+          background-color: var(--color-cp-pink-light);
         }
       }
       .card_image_detalhe {

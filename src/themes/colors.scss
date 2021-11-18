@@ -21,7 +21,9 @@
 
   --color-dark: #333;
   --color-light: #fff;
-  --color-grey-light: #EEEEEE;
+
+  --color-grey-light: #eee;
+  --color-grey-medium: #999;
   --color-grey-dark: #263238;
 
   --color-cp-orange: #FF9D55;
@@ -44,7 +46,7 @@
   --color-cp-gray: #B7B7CE;
 
   --font-weight-normal: normal;
-  --font-weight-medium: medium;
+  --font-weight-medium: 600;
   --font-weight-bold: bold;
 
   --font-size-xxs: 12px;
@@ -55,4 +57,16 @@
   --font-size-xl: 21px;
   --font-size-xxl: 23px;
 
+  --padding-xs: 3px;
+  --padding-s: 5px;
+  --padding-m: 10px;
+  --padding-l: 15px;
+  --padding-xl: 20px;
+
+  --radius-xs: 3px;
+  --radius-s: 5px;
+  --radius-m: 10px;
+  --radius-l: 15px;
+  --radius-xl: 20px;
+  --radius-50: 50%;
 }
