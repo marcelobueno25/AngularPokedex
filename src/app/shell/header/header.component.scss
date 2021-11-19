@@ -11,6 +11,11 @@
   svg {
     width: 20px;
     height: 20px;
+    margin: 0 5px;
+
+    &.active {
+      opacity: .3;
+    }
   }
 
   .header_menu {

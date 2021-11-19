@@ -100,7 +100,7 @@ export class DetalheComponent implements OnInit {
       (response) => {
         this.atualizarDados(response);
         response.detalhe?.stats.map((atributo: any) => {
-          console.log('atributo: ', atributo);
+          // console.log('atributo: ', atributo);
           const valorHabilidade: number = atributo.base_stat;
           this.radarChartData[0].data?.push(valorHabilidade);
         });
