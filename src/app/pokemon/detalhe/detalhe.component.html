@@ -129,26 +129,16 @@
         <app-card-titulo>Informações complementares</app-card-titulo>
         <div class="detalhe_card_item">
           <h2>Experiência ao Derrotar</h2>
-          <!-- <progressbar class="detalhe_card_progressbar" [max]="400" [value]="pokemonDetalhe?.experiencia" [type]="type"
-            [striped]="true" [animate]="true">
-            <i>{{ pokemonDetalhe?.experiencia }} / 400</i>
-          </progressbar> -->
-          <app-progresso [total]='400' [ativaPorcetangem]='false' [progress]='pokemonDetalhe?.experiencia'>
-          </app-progresso>
+          <p>{{ pokemonDetalhe?.experiencia }} Exp</p>
           <p class="detalhe_card_desc">A experiência básica obtida ao derrotar este Pokémon.
           </p>
         </div>
-
-      </app-card>
-
-      <app-card>
-        <app-card-titulo>Habilidade(s)</app-card-titulo>
         <div class="detalhe_card_item">
-          <h2 *ngFor="let habilidade of pokemonDetalhe?.habilidades">{{ habilidade.ability?.name
-            }} </h2>
+          <h2>Habilidade(s)</h2>
+          <p *ngFor="let habilidade of pokemonDetalhe?.habilidades">{{ habilidade.ability?.name
+            }} </p>
         </div>
       </app-card>
-
     </div>
   </div>
 </div>

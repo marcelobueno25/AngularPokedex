@@ -1,10 +1,8 @@
 .progress-bar-container {
-  // box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-  box-shadow: 1px 1px 4px -1px #333;
-  // border: 1px solid #aaa;
-  background-color: #eee;
-  border-radius: 5px;
-  margin: 10px 0;
+  box-shadow: 1px 1px 4px -1px var(--color-dark);
+  background-color: var(--color-grey-light);
+  border-radius: var(--radius-s);
+  margin: var(--margin-m) 0;
   overflow: hidden;
 
   .progress-bar {
@@ -12,22 +10,22 @@
     overflow: hidden;
     min-height: 15px;
     width: 0;
-    padding: 3px;
+    padding: var(--padding-xs);
     text-align: center;
 
     span {
-      font-size: 11px;
-      color: #424242;
+      font-size: var(--font-size-xxs);
+      color: var(--color-dark);
       font-weight: bold;
     }
   }
   .progress-bar.green {
-    background-color: #b4ff70;
+    background-color: var(--color-cp-green-light);
   }
   .progress-bar.yellow {
-    background-color: #ffe070;
+    background-color: var(--color-cp-yellow-light);
   }
   .progress-bar.red {
-    background-color: #ff9e70;
+    background-color: var(--color-cp-orange);
   }
 }

@@ -8,7 +8,7 @@
       align-items: center;
       padding: var(--padding-s) var(--padding-xl);
       border-radius: var(--radius-m);
-      font-weight: var(--font-weight-medium);
+      font-weight: 600;
       transition: .5s;
       border: none;
       cursor: pointer;
@@ -57,37 +57,37 @@
 
         &.detalhe_hp  {
           .detalhe_habilidades_title {
-            background-color: #b4ff70;
+            background-color: var(--color-habilidade-hp);
           }
         }
 
         &.detalhe_atk  {
           .detalhe_habilidades_title {
-            background-color: #ffe070;
+            background-color: var(--color-habilidade-atk);
           }
         }
 
         &.detalhe_def  {
           .detalhe_habilidades_title {
-            background-color: #ff9e70;
+            background-color: var(--color-habilidade-def);
           }
         }
 
         &.detalhe_spA  {
           .detalhe_habilidades_title {
-            background-color: #70ebff;
+            background-color: var(--color-habilidade-spA);
           }
         }
 
         &.detalhe_spD  {
           .detalhe_habilidades_title {
-            background-color: #87acff;
+            background-color: var(--color-habilidade-spD);
           }
         }
 
         &.detalhe_sPD  {
           .detalhe_habilidades_title {
-            background-color: #da80ff;
+            background-color: var(--color-habilidade-sPD);
           }
         }
 
@@ -99,20 +99,17 @@
           height: 40px;
           width: 40px;
           padding: var(--padding-m);
-          font-weight: var(--font-weight-medium);
+          font-weight: 600;
           color: var(--color-dark);
         }
 
         .detalhe_habilidades_result {
-          font-weight: var(--font-weight-medium);
+          font-weight: 600;
         }
       }
 
       h3 {
-        // font-size: 20px;
-
         span {
-          // font-size: var(--font-size-s);
           text-transform: capitalize;
         }
       }
@@ -129,34 +126,34 @@
         margin-right: var(--margin-m);
 
         &.detalhe_color_red {
-          background-color: var(--color-cp-red);
+          background-color: var(--color-pokedex-red);
         }
         &.detalhe_color_blue {
-          background-color: var(--color-cp-blue);
+          background-color: var(--color-pokedex-blue);
         }
         &.detalhe_color_yellow {
-          background-color: var(--color-cp-yellow-light);
+          background-color: var(--color-pokedex-yellow);
         }
         &.detalhe_color_green {
-          background-color: var(--color-cp-green-light);
+          background-color: var(--color-pokedex-green);
         }
         &.detalhe_color_black {
-          background-color: var(--color-cp-purple-dark);
+          background-color: var(--color-pokedex-black);
         }
         &.detalhe_color_brown {
-          background-color: var(--color-cp-orange);
+          background-color: var(--color-pokedex-brown);
         }
         &.detalhe_color_purple {
-          background-color: var(--color-cp-purple-medium);
+          background-color: var(--color-pokedex-purple);
         }
         &.detalhe_color_gray {
-          background-color: var(--color-grey-medium);
+          background-color: var(--color-pokedex-gray);
         }
         &.detalhe_color_white {
-          background-color: var(--color-grey-light);
+          background-color: var(--color-pokedex-white);
         }
         &.detalhe_color_pink {
-          background-color: var(--color-cp-pink-light);
+          background-color: var(--color-pokedex-pink);
         }
       }
       .card_image_detalhe {

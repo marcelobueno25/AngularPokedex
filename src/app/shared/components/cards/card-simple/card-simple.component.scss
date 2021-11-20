@@ -1,18 +1,13 @@
-
-
-// :host {
-// }
-
 .card {
   min-width: 250px;
   padding: 0;
-  border-radius: 10px;
+  border-radius: var(--radius-m);
   box-shadow: 0px 0px 5px #999;
 
   .card_header {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: var(--padding-m);
     border-radius: 10px 10px 0 0;
 
     .card_header_avatar img, .card_header_avatar mat-spinner {
@@ -72,7 +67,7 @@
 
     .card_link_visualizar {
       display: block;
-      padding: 15px 0;
+      padding: var(--padding-l) 0;
       font-weight: bold;
       border-radius: 0 0 10px 10px;
       width: 100%;
@@ -81,24 +76,24 @@
 }
 
 $color_pokemon: (
-	normal: var(--color-cp-yellow_green),
-	fire: var(--color-cp-orange),
-	water: var(--color-cp-blue),
-	electric: var(--color-cp-yellow-light),
-	grass: var(--color-cp-green-light),
-	ice: var(--color-cp-blue_green),
-	fighting: var(--color-cp-red),
-	poison: var(--color-cp-pink-dark),
-	ground: var(--color-cp-yellow-medium),
-	flying: var(--color-cp-purple-medium),
-	psychic: var(--color-cp-pink-medium),
-	bug: var(--color-cp-green-medium),
-	rock: var(--color-cp-yellow-dark),
-	ghost: var(--color-cp-purple-dark),
-	dragon: var(--color-cp-purple-light),
-	dark: var(--color-cp-brown),
-	steel: var(--color-cp-gray),
-	fairy: var(--color-cp-pink-light),
+	normal: var(--color-type-normal),
+  fighting: var(--color-type-fighting),
+  flying: var(--color-type-flying),
+  poison: var(--color-type-poison),
+  ground: var(--color-type-ground),
+	rock: var(--color-type-rock),
+	bug: var(--color-type-bug),
+	ghost: var(--color-type-ghost),
+	steel: var(--color-type-steel),
+	fire: var(--color-type-fire),
+	water: var(--color-type-water),
+	grass: var(--color-type-grass),
+	electric: var(--color-type-electric),
+	psychic: var(--color-type-psychic),
+	ice: var(--color-type-ice),
+	dragon: var(--color-type-dragon),
+	dark: var(--color-type-dark),
+	fairy: var(--color-type-fairy),
 );
 
 
