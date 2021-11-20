@@ -25,16 +25,4 @@ export class DataService {
   setPage(page: number) {
     this.pageSource.next(page);
   }
-
-  // getTema() {
-  //   return this.tema;
-  // }
-
-  // setTema(tema: boolean) {
-  //   this.tema = tema;
-  // }
-
-  // getImg2d() {
-  //   this.emitirCursoCriado.emit(this.tema);
-  // }
 }

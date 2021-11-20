@@ -15,16 +15,6 @@ export class PokemonService {
     return this.http.get<any>(`${url}`);
   }
 
-  getListaPokemon(page: number = 0, limit: number = 20): Observable<any> {
-    return this.getAPI(
-      `${this.URLBASE}/pokemon/?limit=${limit}&offset=${page}`
-    ).pipe(
-      map((response: any) => {
-        return response;
-      })
-    );
-  }
-
   getListaAll(page: number = 0, limit: number = 20): Observable<any> {
     return this.getAPI(
       `${this.URLBASE}/pokemon/?limit=${limit}&offset=${page}`
@@ -46,13 +36,6 @@ export class PokemonService {
 
   getDetalhePokemon(id: string): Observable<any> {
     return this.getAPI(`${this.URLBASE}/pokemon/${id}`);
-  }
-
-  getEspeciePokemon(id: string): Observable<any> {
-    return this.getAPI(`${this.URLBASE}/pokemon-species/${id}`);
-  }
-  getTipoPokemon(id: string): Observable<any> {
-    return this.getAPI(`${this.URLBASE}/type/${id}`);
   }
 
   getDetalhesAll(id: string): Observable<any> {
