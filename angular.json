@@ -30,7 +30,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/assets", "manifest.json"],
+            "assets": ["src/assets", "src/manifest.json"],
             "styles": ["src/styles.scss"],
             "scripts": []
           },
@@ -93,7 +93,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/assets", "manifest.json"],
+            "assets": ["src/assets", "src/manifest.json"],
             "styles": ["src/styles.scss"],
             "scripts": ["../node_modules/chart.js/src/chart.js"]
           }
