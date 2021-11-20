@@ -27,7 +27,6 @@ body {
 }
 
 * {
-  // font-family: 'dongle-regular';
   font-family: 'milky nice';
   letter-spacing: 2px;
   line-height: 1 !important;
@@ -108,6 +107,7 @@ button {
 
 *::-webkit-scrollbar-track {
   background: #eee;
+  border-radius: 10px;
 }
 
 *::-webkit-scrollbar-thumb {

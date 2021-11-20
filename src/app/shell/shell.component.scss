@@ -1,7 +1,7 @@
 .conteudoContainer {
-  min-height:100%;
-  position:relative;
-  width:100%;
+  min-height: 100%;
+  position: relative;
+  width: 100%;
 
   .conteudo {
     padding-top: 30px;
@@ -11,8 +11,8 @@
   }
 
   app-footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }

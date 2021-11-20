@@ -1,8 +1,7 @@
 .header {
-
   .home_header_icon {
     display: block;
-    padding: 5px 10px;
+    padding: var(--padding-s) var(--padding-m);
     cursor: pointer;
     height: 100%;
     width: 130px;
@@ -11,24 +10,10 @@
   svg {
     width: 20px;
     height: 20px;
-    margin: 0 5px;
+    margin: 0 var(--margin-s);
 
     &.active {
       opacity: .3;
-    }
-  }
-
-  .header_menu {
-    width: 100%;
-    padding: 0 10px;
-
-    a {
-      font-size: 18px;
-      color: #333;
-      text-transform: uppercase;
-      font-weight: bold;
-      margin: 0 10px;
-      text-decoration: none;
     }
   }
 }

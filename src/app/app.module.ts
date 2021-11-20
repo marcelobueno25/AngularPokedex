@@ -9,8 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,11 +18,9 @@ import { ChartsModule } from 'ng2-charts';
     HttpClientModule,
     PokemonModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule,
     ShellModule,
-    FlexLayoutModule,
-    ChartsModule,
     PipesModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
