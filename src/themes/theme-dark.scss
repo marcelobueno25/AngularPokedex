@@ -24,6 +24,10 @@ body.tema-escuro {
   .detalhe_card {
     background: #424242;
 
+    .detalhe_card_desc {
+      color: var(--color-primary);
+    }
+
     p, span, h1 {
       color: var(--color-light);
     }
@@ -48,6 +52,7 @@ body.tema-escuro {
 
       button {
         background-color: var(--color-primary);
+        color: var(--color-dark);
 
         span {
           color: #424242;

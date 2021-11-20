@@ -26,6 +26,10 @@ body:not(.tema-escuro) {
   .detalhe_card {
     background: var(--color-light);
 
+    .detalhe_card_desc {
+      color: var(--color-secondary);
+    }
+
     p, span, h1 {
       color: var(--color-dark);
     }
@@ -47,6 +51,7 @@ body:not(.tema-escuro) {
 
       button {
         background-color: var(--color-secondary);
+        color: var(--color-light);
 
         span {
           color: var(--color-light);

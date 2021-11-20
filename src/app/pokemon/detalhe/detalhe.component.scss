@@ -27,7 +27,6 @@
 
   .detalhe_conteudo {
     .detalhe_conteudo_item {
-
       .detalhe_card_id {
         display: flex;
         justify-content: center;
@@ -101,6 +100,8 @@
           padding: var(--padding-m);
           font-weight: 600;
           color: var(--color-dark);
+          font-size: var(--font-size-xxxs);
+          letter-spacing: 1px;
         }
 
         .detalhe_habilidades_result {

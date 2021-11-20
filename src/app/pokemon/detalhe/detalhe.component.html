@@ -20,7 +20,7 @@
         <div fxLayout="row" fxLayoutAlign="space-between center">
           <div fxLayout="row" fxLayoutAlign="left center" fxLayoutGap="10px">
             <div>
-              <h3 class="text-uppercase detalhe_card_id">#{{ pokemonDetalhe?.id }}</h3>
+              <h6 class="text-uppercase detalhe_card_id">#{{ pokemonDetalhe?.id }}</h6>
             </div>
             <div>
               <h1 class="text-uppercase">{{ pokemonDetalhe?.nome }}</h1>
@@ -113,10 +113,6 @@
         </div>
         <div class="detalhe_card_item">
           <h2>Taxa de Captura</h2>
-          <!-- <progressbar class="detalhe_card_progressbar" [max]="255" [value]="pokemonDetalhe?.taxaCaptura" [type]="type"
-            [striped]="true" [animate]="true">
-            <i>{{ pokemonDetalhe?.taxaCaptura }} / 255</i>
-          </progressbar> -->
           <app-progresso [total]='255' [ativaPorcetangem]='true' [progress]='pokemonDetalhe?.taxaCaptura'>
           </app-progresso>
           <p class="detalhe_card_desc">A taxa de captura básica; até 255. <br /> Quanto maior o número, mais fácil será

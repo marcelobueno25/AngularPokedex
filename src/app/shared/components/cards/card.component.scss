@@ -17,10 +17,15 @@
     .detalhe_card_item {
       margin: var(--margin-m) 0;
 
+      p {
+        margin-top: 5px;
+        margin-left: 10px;
+        font-weight: 600;
+      }
+
       .detalhe_card_desc {
         font-size: var(--font-size-xxs);
         text-align: left;
-        margin: 5px 0;
       }
 
       .detalhe_card_progressbar {
@@ -28,14 +33,17 @@
       }
 
       .detalhe_card_tipos {
+        text-transform: uppercase;
         margin-top: var(--margin-s);
 
         span {
           text-align: center;
           display: inline-block;
-          padding: var(--padding-xs) var(--padding-m);
+          padding: var(--padding-s) var(--padding-m);
           margin-right: var(--margin-s);
           border-radius: var(--radius-m);
+          font-size: var(--font-size-xxxs);
+          font-weight: bold;
           min-width: 80px;
         }
 

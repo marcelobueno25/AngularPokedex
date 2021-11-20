@@ -13,7 +13,7 @@
       </mat-progress-spinner>
     </div>
     <div>
-      <h6 class="card_header_subtitle"># {{ id }}</h6>
+      <p class="card_header_subtitle"># {{ id }}</p>
       <h5 class="card_header_title">{{ name }}</h5>
     </div>
   </mat-card-header>
@@ -26,8 +26,7 @@
     <span class="bg-color bg-color-{{ bgcolor }}"></span>
   </div>
 
-  <mat-card-footer mat-card-footer class="card_footer">
-    <button color="primary" mat-raised-button class="card_link_visualizar"
-      routerLink="/pokemon/detalhe/{{ id }}">Visualizar</button>
+  <mat-card-footer class="card_footer">
+    <button class="card_link_visualizar" routerLink="/pokemon/detalhe/{{ id }}">Visualizar</button>
   </mat-card-footer>
 </mat-card>

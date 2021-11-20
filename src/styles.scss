@@ -11,6 +11,11 @@ $my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 $my-theme: mat.define-light-theme($my-primary,$my-accent);
 @include mat.all-component-themes($my-theme);
 
+@font-face {
+  font-family: 'milky nice';
+  src: url(./fonts/milky_nice/MilkyNice-Clean.ttf) format("truetype");
+  font-display: swap;
+}
 
 html, body { height: 100%; }
 body {
@@ -22,8 +27,10 @@ body {
 }
 
 * {
-  font-family: sans-serif;
-  line-height: 1.2 !important;
+  // font-family: 'dongle-regular';
+  font-family: 'milky nice';
+  letter-spacing: 2px;
+  line-height: 1 !important;
 }
 
 h1, h2, h3, h4, h5, h6, p, a {
@@ -57,7 +64,22 @@ h6 {
 }
 
 span {
-  font-size: var(--font-size-xxs);
+  font-size: var(--font-size-s);
+  font-family: sans-serif;
+}
+
+p {
+  font-size: var(--font-size-xs);
+  font-family: sans-serif;
+}
+
+small {
+  font-family: sans-serif;
+}
+
+button {
+  font-size: var(--font-size-xs);
+  font-family: sans-serif;
 }
 
 .container {
@@ -73,7 +95,7 @@ span {
 }
 
 .text-capitalize {
- text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .text-uppercase {
