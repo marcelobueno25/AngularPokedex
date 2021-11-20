@@ -1,10 +1,9 @@
 {
   "name": "Pokemon PokeDex",
   "short_name": "PokeDex",
-  "start_url": "/",
+  "start_url": "/index.html",
   "background_color": "#fff",
   "display": "standalone",
-  "scope": "/",
   "theme_color": "#fff",
   "icons": [
     {
