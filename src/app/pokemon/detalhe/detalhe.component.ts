@@ -18,8 +18,8 @@ export class DetalheComponent implements OnInit {
     'HP',
     'Ataque',
     'Defesa',
-    'Ataque-Especial',
-    'Defesa-Especial',
+    'SuperAtaque',
+    'SuperDefesa',
     'Rapidez',
   ];
   public lineChartColors: Color[] = [
