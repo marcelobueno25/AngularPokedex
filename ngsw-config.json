@@ -7,7 +7,7 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "./assets/pokeball_5.ico",
+          "./assets/logo.ico",
           "./index.html",
           "./manifest.webmanifest",
           "./*.css",
