@@ -25,6 +25,8 @@ import { environment } from '../environments/environment';
     FlexLayoutModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
+      scope: './',
+      registrationStrategy: 'registerImmediately',
     }),
   ],
   providers: [],
