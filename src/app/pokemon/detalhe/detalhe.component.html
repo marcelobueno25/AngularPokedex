@@ -29,14 +29,14 @@
           </div>
           <div>
             <img *ngFor="let tipo of pokemonDetalhe?.tipo" class="detalhe_icon_tipo"
-              src="../../../../../assets/types/{{ tipo.type.name }}.png" alt="" />
+              src="../../../../../assets/types/{{ tipo.type.name }}.png" alt="Tipos pokemon {{tipo.type.name}}" />
           </div>
         </div>
       </app-card>
 
       <app-card>
         <div fxLayout="row" fxLayoutAlign="center center">
-          <img mat-card-image class="card_image_detalhe" [src]="pokemonDetalhe?.images" />
+          <img mat-card-image class="card_image_detalhe" [src]="pokemonDetalhe?.images" alt="Imagem Pokemon" />
         </div>
       </app-card>
 

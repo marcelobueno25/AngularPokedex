@@ -8,7 +8,8 @@
   </mat-card-header> -->
   <mat-card-header class="card_header">
     <div mat-card-avatar class="card_header_avatar">
-      <img *ngIf="bgcolor" class="card_header_icon" src="../../../../../assets/types/{{ bgcolor }}.png" alt="" />
+      <img *ngIf="bgcolor" class="card_header_icon" src="../../../../../assets/types/{{ bgcolor }}.png"
+        alt="Tipo do Pokemon {{bgcolor}}" />
       <mat-progress-spinner [diameter]="30" class="mat-spinner" *ngIf="!bgcolor" mode="indeterminate">
       </mat-progress-spinner>
     </div>
@@ -21,7 +22,7 @@
   <div mat-card-content class="mat-card-content">
     <!-- <img mat-card-image class="card_image" [src]="imagePokemon"  /> -->
     <img mat-card-image *ngIf="imageGif" class="card_image_gif"
-      src="../../../../../assets/pokemonGif/{{ imageGif }}.gif" />
+      src="../../../../../assets/pokemonGif/{{ imageGif }}.gif" alt="Pokemon {{ name }}" />
     <mat-spinner [diameter]="70" *ngIf="!imageGif" mode="indeterminate"></mat-spinner>
     <span class="bg-color bg-color-{{ bgcolor }}"></span>
   </div>
