@@ -2,8 +2,7 @@
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
   "appData": {
-    "version": "1.0.1",
-    "changelog": "Updated Angular to v.10.0.2"
+    "version": "1.1.0"
   },
   "assetGroups": [
     {
@@ -25,8 +24,8 @@
       "updateMode": "prefetch",
       "resources": {
         "files": [
-          "/assets/**",
-          "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
+          "./assets/**",
+          "./*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
       }
     }
