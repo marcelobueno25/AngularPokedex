@@ -1,27 +1,51 @@
-# PokemonList
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
+<h1 align="center">
+Pokedex
+</h1>
+  
+<!--  O Porjeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versao 12.1.2. -->
 
-## Development server
+<h3 align="center">
+    <a href="https://angular-pokedex-snowy.vercel.app/pokemon">Acessar a Demonstração</a>
+<h3 >
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## 🚀 Sobre
 
-## Code scaffolding
+O projeto Pokedex é um Landing page que foi criado com intuito de colocarmos em prática todo conteúdo estudado.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚀 Tecnologias utilizadas
 
-## Build
+* [Angular](https://angular.io/) - O framework web usado
+* [RXJS](https://rxjs.dev/) -  Biblioteca para programação reativa usando Observables
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### 🔧 Instalação
 
-## Running unit tests
+```
+git clone git@github.com:marcelobueno25/AngularPokedex.git
+```
+```
+cd AngularPokedex
+```
+```
+npm install
+```
+```
+ng serve --o
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🛠️ Construído com
 
-## Running end-to-end tests
+* [Visual Studio Code](https://code.visualstudio.com/) - IDE utilizada
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## ✒️ Autores
 
-## Further help
+* **Marcelo Bueno** - *Desenvolvedor Front-end* - [Git Marcelo Bueno](https://github.com/marcelobueno25)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 📄 Licença
+
+Este projeto está sob a licença ( MIT ) - veja o arquivo [LICENSE.md](https://github.com/usuario/projeto/licenca) para detalhes.
+
+## 🎁 Expressões de gratidão
+
+* Conte a outras pessoas sobre este projeto 📢
+* Obrigado publicamente 🤓.
