@@ -2,6 +2,8 @@
 <h1 align="center">
 Pokedex
 </h1>
+
+![screendark](https://user-images.githubusercontent.com/32822094/142784353-8487cd5f-44ff-471e-a262-be02f4e70b77.png)
   
 <!--  O Porjeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versao 12.1.2. -->
 
