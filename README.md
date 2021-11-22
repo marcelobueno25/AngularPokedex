@@ -3,7 +3,7 @@
 Pokedex
 </h1>
 
-![screendark](https://user-images.githubusercontent.com/32822094/142784353-8487cd5f-44ff-471e-a262-be02f4e70b77.png)
+![pokedexdarkClaro](https://user-images.githubusercontent.com/32822094/142784920-d969f25f-5e33-4665-a812-3afd30804e46.png)
   
 <!--  O Porjeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versao 12.1.2. -->
 
@@ -20,7 +20,7 @@ O projeto Pokedex é um Landing page que foi criado com intuito de colocarmos em
 * [Angular](https://angular.io/) - O framework web usado
 * [RXJS](https://rxjs.dev/) -  Biblioteca para programação reativa usando Observables
 
-### 🔧 Instalação
+## 🔧 Instalação
 
 ```
 git clone git@github.com:marcelobueno25/AngularPokedex.git
