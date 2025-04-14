@@ -1,6 +1,6 @@
 
 <h1 align="center">
-Pokedex
+Pokemon Pokedex
 </h1>
 
 ![pokedexdarkClaro](https://user-images.githubusercontent.com/32822094/142784920-d969f25f-5e33-4665-a812-3afd30804e46.png)
